@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    background-color: #F8FAFC;
+    color: #0F172A;
+  }
+
+  body {
+    background-color: #F8FAFC;
+    color: #0F172A;
+    @apply font-body antialiased selection:bg-primary selection:text-white;
+  }
+
+  /* Accessible Focus Outline Rules */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-bg;
+  }
+}
+
+/* Typography Hierarchy System */
+.heading-display {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.04;
+  font-size: clamp(2.5rem, 5.5vw + 1rem, 4.75rem);
+}
+
+.heading-h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  font-size: clamp(2.25rem, 4vw + 0.5rem, 3.75rem);
+}
+
+.heading-h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  font-size: clamp(1.875rem, 3vw + 0.5rem, 3rem);
+}
+
+.heading-h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  font-size: clamp(1.25rem, 2vw + 0.5rem, 1.75rem);
+}
+
+/* Reusable Button Primitives */
+.btn-primary {
+  @apply inline-flex items-center justify-center space-x-2 bg-primary text-white font-extrabold text-sm px-6 py-3.5 rounded-full shadow-lg shadow-primary/25 transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+}
+.btn-primary:hover {
+  background-color: #0369A1;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center space-x-2 bg-secondary text-white font-extrabold text-sm px-6 py-3.5 rounded-full shadow-lg shadow-secondary/25 transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+}
+.btn-secondary:hover {
+  background-color: #15803D;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center space-x-2 bg-surface text-textMain font-bold text-sm px-6 py-3.5 rounded-full border-2 border-slate-300 transition-all duration-200 active:scale-95;
+}
+.btn-outline:hover {
+  background-color: #F1F5F9;
+}
+
+/* Animated Shimmer Text Gradient */
+.text-shimmer {
+  background: linear-gradient(120deg, #0284c7 0%, #16a34a 45%, #f59e0b 70%, #0284c7 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textShimmer 5s linear infinite;
+}
+
+@keyframes textShimmer {
+  0% { background-position: 0% center; }
+  100% { background-position: 250% center; }
+}
+
+.text-gradient-primary {
+  background: linear-gradient(135deg, #0284C7 0%, #16A34A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism helpers */
+.glass-pill {
+  background: rgba(8, 47, 73, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(2, 132, 199, 0.15);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+  background: #0284C7;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #16A34A;
+}
+
+/* 3D Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
