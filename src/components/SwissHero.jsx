@@ -1,6 +1,6 @@
 import React from "react";
-import { clinic } from "../data/content";
-import { ArrowUpRight, CheckCircle2, Sparkles, Phone } from "lucide-react";
+import { clinic, services } from "../data/content";
+import { ArrowUpRight, CheckCircle2, Sparkles, Phone, ShieldCheck, HeartPulse, Activity, Zap, Dumbbell, Trophy, Brain } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -10,30 +10,41 @@ export default function SwissHero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1,
+        staggerChildren: 0.12,
+        delayChildren: 0.05,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 25 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
+  const getTherapyIcon = (id) => {
+    switch (id) {
+      case "manual": return <Activity className="w-4 h-4 text-emerald-400" />;
+      case "exercise": return <Dumbbell className="w-4 h-4 text-emerald-400" />;
+      case "electro": return <Zap className="w-4 h-4 text-amber-400" />;
+      case "sports": return <Trophy className="w-4 h-4 text-sky-400" />;
+      case "stroke": return <Brain className="w-4 h-4 text-indigo-400" />;
+      default: return <Activity className="w-4 h-4 text-emerald-400" />;
+    }
   };
 
   return (
-    <section id="hero" className="relative pt-36 pb-20 lg:pt-44 lg:pb-28 bg-bg overflow-hidden">
+    <section id="hero" className="relative pt-32 sm:pt-36 pb-16 lg:pt-40 lg:pb-24 bg-bg overflow-hidden">
       
       {/* Background Animated Gradient Glow Orbs */}
       <motion.div 
         animate={{ scale: [1, 1.15, 1], opacity: [0.35, 0.5, 0.35] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-10 right-0 w-[550px] h-[550px] bg-primary/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/4"
+        className="absolute top-10 right-0 w-[350px] sm:w-[550px] h-[350px] sm:h-[550px] bg-primary/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/4"
       />
       <motion.div 
         animate={{ scale: [1, 1.2, 1], opacity: [0.25, 0.45, 0.25] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-0 left-10 w-[480px] h-[480px] bg-secondary/15 rounded-full blur-3xl pointer-events-none"
+        className="absolute bottom-0 left-10 w-[300px] sm:w-[480px] h-[300px] sm:h-[480px] bg-secondary/15 rounded-full blur-3xl pointer-events-none"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -44,26 +55,27 @@ export default function SwissHero() {
           animate="visible"
           className="max-w-5xl space-y-6"
         >
-          {/* Top Kicker Floating Badge */}
+          {/* Top Kicker Floating Badge - Featuring Hindi Tagline */}
           <motion.div variants={itemVariants} className="inline-block">
             <motion.div 
-              whileHover={{ scale: 1.05 }}
-              animate={{ y: [0, -4, 0] }}
+              whileHover={{ scale: 1.03 }}
+              animate={{ y: [0, -3, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="inline-flex items-center space-x-3 bg-darkSection text-white px-5 py-2.5 rounded-full text-xs font-extrabold tracking-widest uppercase shadow-xl border-2 border-white/20"
+              className="inline-flex items-center space-x-2.5 bg-darkSection text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs font-black tracking-wide shadow-xl border-2 border-emerald-500/40"
             >
-              <img src="/images/logo.png" alt="Sanjeevani Logo" width="24" height="24" className="w-6 h-6 object-contain rounded-full bg-white p-0.5 shadow-sm" />
-              <Sparkles className="w-4 h-4 text-amberGold" />
-              <span className="text-shimmer">SANJEEVANI PHYSIOTHERAPY & SLIMMING CENTRE</span>
+              <img src="/images/logo.png" alt="Sanjeevani Logo" width="24" height="24" className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-full bg-white p-0.5 shadow-sm" />
+              <Sparkles className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+              <span className="text-white font-extrabold">{clinic.taglineHindi}</span>
+              <span className="text-emerald-400 font-bold hidden sm:inline">• {clinic.nameHindi}</span>
             </motion.div>
           </motion.div>
 
-          {/* Massive Display Headline */}
+          {/* Main Display Headline with Hindi Slogans */}
           <motion.div variants={itemVariants} className="space-y-2">
             <h1 className="heading-display text-textMain tracking-tight">
-              Move better. <br />
-              <span className="text-shimmer">
-                Live stronger.
+              {clinic.nameHindi} <br />
+              <span className="text-shimmer text-2xl sm:text-4xl md:text-5xl block mt-1 font-extrabold">
+                {clinic.subTaglineHindi}
               </span>
             </h1>
           </motion.div>
@@ -72,46 +84,58 @@ export default function SwissHero() {
           <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-2 items-center">
             
             <div className="lg:col-span-7 space-y-6">
-              <p className="text-base sm:text-lg lg:text-xl text-muted leading-relaxed font-medium max-w-2xl">
-                Scientific non-surgical joint recovery, spinal rehabilitation & body slimming care in Hisar Cantt under <strong className="text-textMain font-bold underline decoration-primary/40 underline-offset-4">{clinic.doctor} ({clinic.doctorCreds})</strong>.
+              <p className="text-sm sm:text-lg lg:text-xl text-muted leading-relaxed font-medium max-w-2xl">
+                बिना ऑपरेशन गर्दन, पीठ, कमर व घुटनों के दर्द का वैज्ञानिक उपचार। <strong className="text-textMain font-bold underline decoration-primary/40 underline-offset-4">{clinic.doctor} ({clinic.doctorCreds})</strong> द्वारा हिसार कैंट में।
               </p>
 
-              {/* Action Buttons with Spring Hover Effects */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-                <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+                <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
                   <Link
                     to="/contact"
-                    className="inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-primary to-primary-hover text-white text-base font-extrabold px-8 py-4 rounded-full shadow-2xl shadow-primary/30 transition-all border border-white/20 w-full sm:w-auto"
+                    className="inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-primary to-primary-hover text-white text-sm sm:text-base font-extrabold px-7 py-4 rounded-full shadow-2xl shadow-primary/30 transition-all border border-white/20 w-full sm:w-auto"
                   >
-                    <span>Book Appointment</span>
+                    <span>अपॉइंटमेंट बुक करें</span>
                     <ArrowUpRight className="w-5 h-5 text-white" />
                   </Link>
                 </motion.div>
 
-                <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
-                  <a
-                    href={`tel:${clinic.phones[0]}`}
-                    className="inline-flex items-center justify-center space-x-2 bg-surface hover:bg-slate-100 text-textMain border-2 border-slate-300 text-base font-bold px-7 py-4 rounded-full shadow-sm transition-all w-full sm:w-auto"
-                  >
-                    <Phone className="w-4 h-4 text-secondary" />
-                    <span>Call: {clinic.phones[0]}</span>
-                  </a>
-                </motion.div>
+                <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center">
+                  <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                    <a
+                      href={`tel:${clinic.phones[0]}`}
+                      className="inline-flex items-center justify-center space-x-1.5 bg-surface hover:bg-slate-100 text-textMain border-2 border-slate-300 text-xs sm:text-sm font-extrabold px-4 sm:px-5 py-3.5 rounded-full shadow-sm transition-all w-full"
+                    >
+                      <Phone className="w-4 h-4 text-secondary flex-shrink-0" />
+                      <span>{clinic.phones[0]}</span>
+                    </a>
+                  </motion.div>
+
+                  <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}>
+                    <a
+                      href={`tel:${clinic.phones[1]}`}
+                      className="inline-flex items-center justify-center space-x-1.5 bg-surface hover:bg-slate-100 text-textMain border-2 border-slate-300 text-xs sm:text-sm font-extrabold px-4 sm:px-5 py-3.5 rounded-full shadow-sm transition-all w-full"
+                    >
+                      <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                      <span>{clinic.phones[1]}</span>
+                    </a>
+                  </motion.div>
+                </div>
               </div>
 
               {/* Trust Indicators */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-4">
-                <motion.div whileHover={{ y: -3 }} className="flex items-center space-x-2.5 text-xs font-bold text-textMain bg-surface p-3.5 rounded-2xl border border-slate-200 shadow-sm">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-3">
+                <motion.div whileHover={{ y: -2 }} className="flex items-center space-x-2 text-xs font-extrabold text-textMain bg-surface p-3 rounded-2xl border border-slate-200 shadow-sm">
                   <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0" />
-                  <span>8+ Yrs Experience</span>
+                  <span>8+ वर्ष अनुभव</span>
                 </motion.div>
-                <motion.div whileHover={{ y: -3 }} className="flex items-center space-x-2.5 text-xs font-bold text-textMain bg-surface p-3.5 rounded-2xl border border-slate-200 shadow-sm">
+                <motion.div whileHover={{ y: -2 }} className="flex items-center space-x-2 text-xs font-extrabold text-textMain bg-surface p-3 rounded-2xl border border-slate-200 shadow-sm">
                   <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span>5000+ Recovered</span>
+                  <span>5000+ स्वस्थ मरीज़</span>
                 </motion.div>
-                <motion.div whileHover={{ y: -3 }} className="flex items-center space-x-2.5 text-xs font-bold text-textMain bg-surface p-3.5 rounded-2xl border border-slate-200 shadow-sm col-span-2 sm:col-span-1">
+                <motion.div whileHover={{ y: -2 }} className="flex items-center space-x-2 text-xs font-extrabold text-textMain bg-surface p-3 rounded-2xl border border-slate-200 shadow-sm col-span-2 sm:col-span-1">
                   <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0" />
-                  <span>100% Non-Op Care</span>
+                  <span>100% गैर-सर्जिकल</span>
                 </motion.div>
               </div>
 
@@ -129,56 +153,90 @@ export default function SwissHero() {
                     alt="Dr Sohan Lal Physiotherapist"
                     width="64"
                     height="64"
+                    loading="eager"
+                    decoding="async"
                     className="w-16 h-16 rounded-2xl object-cover border-2 border-primary shadow-md"
                   />
                   <div>
-                    <h4 className="font-extrabold text-textMain text-base font-display">{clinic.doctor}</h4>
+                    <h4 className="font-black text-textMain text-base font-display">{clinic.doctor}</h4>
                     <p className="text-xs text-primary font-bold">{clinic.doctorCreds}</p>
-                    <p className="text-[11px] text-muted font-medium">{clinic.doctorRole}</p>
+                    <p className="text-xs text-secondary font-extrabold">{clinic.doctorRoleHindi} (Chief Specialist)</p>
                   </div>
                 </div>
 
-                <div className="bg-bg p-3.5 rounded-2xl border border-slate-200 text-xs text-textMain font-medium leading-relaxed">
-                  "Evidence-based joint mobilization and state-of-the-art electrotherapy to help you live a active, pain-free life."
+                <div className="bg-bg p-3.5 rounded-2xl border border-slate-200 text-xs text-textMain font-semibold leading-relaxed">
+                  "हमारा लक्ष्य हर मरीज़ को दर्द से स्थाई राहत देना और बिना ऑपरेशन के उनका सामान्य जीवन पुनः बहाल करना है।"
                 </div>
               </motion.div>
             </motion.div>
 
           </motion.div>
+
+          {/* 5 Therapy Cards Pill Strip - Direct Banner Replication */}
+          <motion.div variants={itemVariants} className="pt-6">
+            <div className="bg-darkSection p-4 sm:p-5 rounded-3xl border-2 border-emerald-500/30 shadow-xl space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-extrabold uppercase tracking-widest text-emerald-400 flex items-center space-x-2">
+                  <Sparkles className="w-3.5 h-3.5" />
+                  <span>मुख्य उपचार एवं थैरेपी (5 Core Therapies)</span>
+                </span>
+                <span className="text-[10px] text-slate-300 font-bold hidden sm:inline">बिना ऑपरेशन इलाज</span>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
+                {services.slice(0, 5).map((srv) => (
+                  <Link
+                    key={srv.id}
+                    to="/treatments"
+                    className="flex items-center space-x-2 bg-white/10 hover:bg-white/20 p-2.5 rounded-2xl border border-white/15 transition-all text-white group"
+                  >
+                    <div className="p-1.5 rounded-xl bg-white/10 group-hover:scale-110 transition-transform">
+                      {getTherapyIcon(srv.id)}
+                    </div>
+                    <span className="text-xs font-bold leading-tight line-clamp-1">{srv.titleHindi}</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
         </motion.div>
 
         {/* Large Showcase Banner with Hover Scale */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-14 relative rounded-[32px] overflow-hidden border-4 border-surface shadow-2xl bg-darkSection group"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-10 sm:mt-14 relative rounded-[28px] sm:rounded-[32px] overflow-hidden border-4 border-surface shadow-2xl bg-darkSection group"
         >
           <img
             src="/images/hero_physio.png"
             alt="Sanjeevani Physiotherapy Clinic Interior"
             width="1200"
             height="480"
-            className="w-full h-[400px] sm:h-[480px] object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+            className="w-full h-[320px] sm:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-darkSection via-darkSection/30 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-darkSection via-darkSection/40 to-transparent"></div>
 
           {/* Banner Caption Overlay */}
-          <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-white">
-            <div className="glass-pill px-6 py-4 rounded-2xl border border-white/20 max-w-xl flex items-center space-x-4 shadow-xl">
-              <img src="/images/logo.png" alt="Sanjeevani Emblem" width="48" height="48" className="w-12 h-12 object-contain rounded-full bg-white p-1 flex-shrink-0 shadow-lg" />
+          <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-white">
+            <div className="glass-pill p-3.5 sm:px-6 sm:py-4 rounded-2xl border border-white/20 max-w-xl flex items-center space-x-3 sm:space-x-4 shadow-xl w-full sm:w-auto">
+              <img src="/images/logo.png" alt="Sanjeevani Emblem" width="48" height="48" className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-full bg-white p-1 flex-shrink-0 shadow-lg" />
               <div>
-                <h4 className="font-extrabold text-base text-white font-display">SANJEEVANI PHYSIOTHERAPY & SLIMMING CENTRE</h4>
-                <p className="text-xs text-slate-200 mt-0.5 font-medium">Karan Singh Market, TCP-2, Near Krishna Devi Hospital, Hisar Cantt</p>
+                <h4 className="font-extrabold text-xs sm:text-base text-white font-display">संजीवनी फिजियोथेरेपी सेंटर</h4>
+                <p className="text-[11px] sm:text-xs text-slate-200 mt-0.5 font-medium">{clinic.addressHindi}</p>
               </div>
             </div>
             
             <Link
               to="/contact"
-              className="bg-primary hover:bg-primary-hover text-white font-extrabold text-xs px-6 py-3.5 rounded-full shadow-lg border border-white/20 transition-all hover:scale-105"
+              className="bg-primary hover:bg-primary-hover text-white font-extrabold text-xs px-5 sm:px-6 py-3 sm:py-3.5 rounded-full shadow-lg border border-white/20 transition-all hover:scale-105 w-full sm:w-auto text-center"
             >
-              Book Direct Consultation
+              डायरेक्ट अपॉइंटमेंट बुक करें
             </Link>
           </div>
         </motion.div>

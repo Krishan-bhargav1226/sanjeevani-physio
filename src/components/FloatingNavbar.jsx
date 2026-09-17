@@ -131,19 +131,22 @@ export default function FloatingNavbar() {
           className="fixed inset-0 z-40 bg-darkSection text-white flex flex-col justify-between p-8 pt-28 lg:hidden animate-fadeIn overflow-y-auto"
         >
           <div className="space-y-6">
-            <div className="flex items-center justify-between pb-4 border-b border-white/10">
-              <span className="text-xs uppercase tracking-widest text-secondary font-bold">Main Menu</span>
-              <span className="text-xs text-emerald-400 font-semibold">🟢 Open Today (9 AM - 8 PM)</span>
+            <div className="flex flex-col space-y-1 pb-4 border-b border-white/10">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black text-emerald-400 tracking-wider">संजीवनी फिजियोथेरेपी सेंटर</span>
+                <span className="text-[11px] text-emerald-400 font-bold bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-500/30">🟢 9 AM - 8 PM</span>
+              </div>
+              <span className="text-xs text-slate-300 font-semibold">{clinic.taglineHindi}</span>
             </div>
 
-            <div className="flex flex-col space-y-3">
+            <div className="flex flex-col space-y-2">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.name}
                   to={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) =>
-                    `text-2xl sm:text-3xl font-extrabold font-display transition-colors py-2 border-b border-white/5 flex items-center justify-between ${isActive ? "text-secondary" : "text-white hover:text-secondary"
+                    `text-xl sm:text-2xl font-extrabold font-display transition-colors py-2 border-b border-white/5 flex items-center justify-between ${isActive ? "text-emerald-400" : "text-white hover:text-emerald-400"
                     }`
                   }
                 >
@@ -154,23 +157,32 @@ export default function FloatingNavbar() {
             </div>
           </div>
 
-          <div className="space-y-4 pt-8 border-t border-white/10 mt-6">
+          <div className="space-y-3 pt-6 border-t border-white/10 mt-4 mb-8 sm:mb-0">
             <Link
               to="/contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center space-x-2 bg-primary hover:bg-primary-hover text-white font-extrabold py-4 rounded-2xl shadow-xl text-base"
+              className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-primary to-primary-hover text-white font-extrabold py-3.5 rounded-2xl shadow-xl text-sm"
             >
-              <Calendar className="w-5 h-5" />
-              <span>Book Appointment Now</span>
+              <Calendar className="w-4 h-4" />
+              <span>अपॉइंटमेंट बुक करें (Book Appointment)</span>
             </Link>
 
-            <a
-              href={`tel:${clinic.phones[0]}`}
-              className="w-full flex items-center justify-center space-x-2 bg-white/10 text-white font-bold py-3.5 rounded-2xl border border-white/15"
-            >
-              <Phone className="w-4 h-4 text-secondary" />
-              <span>Call Helpline: {clinic.phones[0]}</span>
-            </a>
+            <div className="grid grid-cols-2 gap-2">
+              <a
+                href={`tel:${clinic.phones[0]}`}
+                className="flex items-center justify-center space-x-1.5 bg-white/10 text-white font-bold py-3 rounded-xl border border-white/15 text-xs"
+              >
+                <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                <span>{clinic.phones[0]}</span>
+              </a>
+              <a
+                href={`tel:${clinic.phones[1]}`}
+                className="flex items-center justify-center space-x-1.5 bg-white/10 text-white font-bold py-3 rounded-xl border border-white/15 text-xs"
+              >
+                <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                <span>{clinic.phones[1]}</span>
+              </a>
+            </div>
           </div>
         </div>
       )}

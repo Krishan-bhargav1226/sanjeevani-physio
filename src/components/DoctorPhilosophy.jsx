@@ -23,11 +23,12 @@ export default function DoctorPhilosophy() {
                   alt={`${clinic.doctor} Physiotherapist`}
                   className="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute bottom-4 left-4 right-4 glass-pill p-4 rounded-2xl border border-white/15 flex items-center space-x-3">
-                  <img src="/images/logo.png" alt="Sanjeevani Logo" className="w-10 h-10 object-contain rounded-full bg-white p-0.5 shadow-md flex-shrink-0" />
+                <div className="absolute bottom-4 left-4 right-4 glass-pill p-4 rounded-2xl border border-emerald-500/40 flex items-center space-x-3 shadow-2xl">
+                  <img src="/images/logo.png" alt="Sanjeevani Logo" className="w-11 h-11 object-contain rounded-full bg-white p-0.5 shadow-md flex-shrink-0" />
                   <div className="text-left">
-                    <h4 className="font-extrabold text-white text-base font-display">{clinic.doctor}</h4>
-                    <p className="text-xs text-secondary font-semibold">{clinic.doctorCreds}</p>
+                    <h4 className="font-black text-white text-base font-display">{clinic.doctor} ({clinic.doctorRoleHindi})</h4>
+                    <p className="text-xs text-emerald-400 font-extrabold">{clinic.doctorCreds}</p>
+                    <p className="text-[11px] text-slate-300 font-medium">Chief Physiotherapist & Sports Rehab Specialist</p>
                   </div>
                 </div>
               </div>

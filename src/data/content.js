@@ -2,29 +2,35 @@
 
 export const clinic = {
   name: "Sanjeevani",
+  nameHindi: "संजीवनी फिजियोथेरेपी सेंटर",
   tagline: "Physiotherapy & Slimming Centre",
+  taglineHindi: "दर्द मुक्त जीवन की ओर एक कदम",
+  subTaglineHindi: "सही इलाज • सही देखभाल • बेहतर परिणाम",
   doctor: "डॉ सोहन लाल",
   doctorEnglish: "Dr. Sohan Lal",
   doctorCreds: "BPT, MPTh (Sports), CMT",
   doctorRole: "Chief Physiotherapist & Sports Rehab Specialist",
+  doctorRoleHindi: "फिजियोथेरेपिस्ट",
   doctorExperience: "8+ Years Clinical Experience",
   phones: ["9991070620", "9992458240"],
   whatsapp: "919991070620",
   address: "Karan Singh Market, TCP-2, Near Krishna Devi Memorial Hospital, Hisar Cantt – 125006",
+  addressHindi: "नजदीक कृष्णा देवी मेमोरियल अस्पताल, करण सिंह मार्केट, टीसीपी-2, हिसार कैंट – 125006",
   addressShort: "Hisar Cantt, Haryana",
   mapQuery: "Sanjeevani Physiotherapy Hisar Cantt",
   workingHours: "Monday – Saturday: 9:00 AM – 8:00 PM (Sunday Closed / Emergency on Call)",
 };
 
 export const stats = [
-  { value: "8+", label: "Years Experience", description: "Dedicated non-surgical clinical practice" },
-  { value: "5000+", label: "Recovered Patients", description: "Pain-free lives restored in Hisar" },
-  { value: "12+", label: "Therapy Specialties", description: "Advanced electro & manual techniques" },
-  { value: "99%", label: "Satisfaction Rate", description: "Verified patient outcomes & reviews" },
+  { value: "8+", label: "Years Experience", labelHindi: "8+ वर्ष का अनुभव", description: "Dedicated non-surgical clinical practice" },
+  { value: "5000+", label: "Recovered Patients", labelHindi: "5000+ संतुष्ट मरीज़", description: "Pain-free lives restored in Hisar" },
+  { value: "12+", label: "Therapy Specialties", labelHindi: "12+ थेरेपी तकनीकें", description: "Advanced electro & manual techniques" },
+  { value: "99%", label: "Satisfaction Rate", labelHindi: "99% सफलता दर", description: "Verified patient outcomes & reviews" },
 ];
 
 export const doctorBio = {
   name: "Dr. Sohan Lal",
+  nameHindi: "डॉ सोहन लाल",
   qualifications: "BPT, MPTh (Sports Rehabilitation), Certified Manual Therapist (CMT)",
   experience: "8+ Years in Clinical Physiotherapy & Sports Medicine",
   specialization: "Spine & Joint Biomechanics, Sports Injury Rehab, Non-Surgical Sciatica Care",
@@ -93,6 +99,7 @@ export const services = [
   {
     id: "manual",
     title: "Manual Joint & Spine Therapy",
+    titleHindi: "मैन्युअल थेरेपी",
     englishTitle: "Hands-on Spinal Alignment & Mobilization",
     badge: "Hands-On Care",
     desc: "Targeted joint mobilization, myofascial trigger point release, and spinal alignment to reduce pressure on nerves and restore joint range.",
@@ -104,21 +111,9 @@ export const services = [
     ]
   },
   {
-    id: "electro",
-    title: "Advanced Electrotherapy",
-    englishTitle: "Medical-Grade Laser & Electro-Modality Suite",
-    badge: "High-Tech Care",
-    desc: "State-of-the-art TENS, Therapeutic Ultrasound, Cold Laser, and Computerized Lumbar/Cervical Traction to accelerate cellular tissue healing.",
-    features: [
-      "Computerized Lumbar & Cervical Traction",
-      "High-Frequency Therapeutic Ultrasound",
-      "IFT & TENS Pain Decompression",
-      "Cold Laser Cellular Tissue Healing"
-    ]
-  },
-  {
     id: "exercise",
     title: "Personalized Active Rehab",
+    titleHindi: "एक्सरसाइज थेरेपी",
     englishTitle: "Biomechanical Strength & Core Protocols",
     badge: "Custom Protocol",
     desc: "Individualized exercise protocols designed around patient biomechanics to rebuild muscle strength, core stability, and endurance.",
@@ -130,8 +125,23 @@ export const services = [
     ]
   },
   {
+    id: "electro",
+    title: "Advanced Electrotherapy",
+    titleHindi: "इलेक्ट्रोथेरेपी",
+    englishTitle: "Medical-Grade Laser & Electro-Modality Suite",
+    badge: "High-Tech Care",
+    desc: "State-of-the-art TENS, Therapeutic Ultrasound, Cold Laser, and Computerized Lumbar/Cervical Traction to accelerate cellular tissue healing.",
+    features: [
+      "Computerized Lumbar & Cervical Traction",
+      "High-Frequency Therapeutic Ultrasound",
+      "IFT & TENS Pain Decompression",
+      "Cold Laser Cellular Tissue Healing"
+    ]
+  },
+  {
     id: "sports",
     title: "Sports Injury & ACL Rehab",
+    titleHindi: "स्पोर्ट्स इंजरी रिहैबिलिटेशन",
     englishTitle: "Ligament Recovery & Athlete Performance",
     badge: "Athletes Specialist",
     desc: "Structured phase-wise rehabilitation for athletes recovering from ACL/MCL ligament tears, meniscus injuries, or sports surgeries.",
@@ -145,6 +155,7 @@ export const services = [
   {
     id: "stroke",
     title: "Stroke & Neuro Rehabilitation",
+    titleHindi: "लकवा (स्ट्रोक) रिहैबिलिटेशन",
     englishTitle: "Paralysis Motor Re-learning Program",
     badge: "Neurological Care",
     desc: "Dedicated neuro-rehabilitation using PNF techniques and motor relearning to help paralysis and stroke survivors regain independence.",
@@ -158,6 +169,7 @@ export const services = [
   {
     id: "slimming",
     title: "Slimming & Body Shaping",
+    titleHindi: "स्लिमिंग एवं वेट लॉस",
     englishTitle: "Non-Surgical Fat Loss & Toning",
     badge: "Non-Surgical",
     desc: "Safe, non-invasive therapies targeting stubborn body fat, metabolic activation, and muscle toning without surgery or medication.",

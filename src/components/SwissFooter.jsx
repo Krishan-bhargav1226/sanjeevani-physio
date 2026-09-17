@@ -15,16 +15,22 @@ export default function SwissFooter() {
               <div className="w-10 h-10 rounded-full bg-white p-0.5 shadow-md flex-shrink-0">
                 <img src="/images/logo.png" alt="Sanjeevani Logo" className="w-full h-full object-contain rounded-full" />
               </div>
-              <span className="text-xl font-extrabold font-display text-white tracking-tight">
-                SANJEEVANI
-              </span>
+              <div>
+                <span className="text-xl font-extrabold font-display text-white tracking-tight block">
+                  SANJEEVANI
+                </span>
+                <span className="text-xs text-emerald-400 font-bold block">{clinic.nameHindi}</span>
+              </div>
             </div>
+            <p className="text-xs text-slate-300 font-bold">
+              "{clinic.taglineHindi}" • {clinic.subTaglineHindi}
+            </p>
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
               Sanjeevani Physiotherapy & Slimming Centre is a modern, evidence-based healthcare practice in Hisar Cantt dedicated to non-surgical joint, spine & rehabilitation care under Dr. Sohan Lal.
             </p>
             <div className="pt-2 text-xs text-slate-400">
-              <p className="font-semibold text-white">{clinic.doctor} ({clinic.doctorCreds})</p>
-              <p>{clinic.doctorRole} • {clinic.doctorExperience}</p>
+              <p className="font-bold text-white">{clinic.doctor} ({clinic.doctorCreds}) - {clinic.doctorRoleHindi}</p>
+              <p>{clinic.doctorExperience}</p>
             </div>
           </div>
 

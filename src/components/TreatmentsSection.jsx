@@ -134,10 +134,13 @@ export default function TreatmentsSection() {
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-bold font-display text-textMain group-hover:text-primary transition-colors">
+                    <span className="text-xs font-black text-secondary uppercase tracking-wider block font-sans">
+                      {service.titleHindi}
+                    </span>
+                    <h3 className="text-xl font-bold font-display text-textMain group-hover:text-primary transition-colors mt-0.5">
                       {service.title}
                     </h3>
-                    <p className="text-xs font-bold text-muted mt-0.5">{service.englishTitle}</p>
+                    <p className="text-xs font-semibold text-muted mt-0.5">{service.englishTitle}</p>
                   </div>
 
                   <p className="text-xs text-muted leading-relaxed font-medium line-clamp-3">
