@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { clinic } from "../data/content";
+import { clinic, therapyOptions } from "../data/content";
 import { getWhatsAppBookingUrl, buildAppointmentMessage } from "../utils/whatsapp";
 import { Phone, MessageCircle, MapPin, Clock, Send, CheckCircle2, Copy, ExternalLink, Check } from "lucide-react";
 
-export default function BookingSection() {
+export default function BookingSection({ className = "" }) {
   const [form, setForm] = useState({
     name: "",
     phone: "",
-    condition: "Knee Osteoarthritis & Pain",
+    condition: "Advanced Physiotherapy",
     date: "",
     time: "Morning (10 AM - 12 PM)",
     notes: "",
@@ -19,7 +19,7 @@ export default function BookingSection() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!form.name.trim() || !form.phone.trim()) {
-      alert("कृपया अपना नाम और मोबाइल नंबर दर्ज करें। / Please enter your name and phone number.");
+      alert("Please enter your name and phone number.");
       return;
     }
     setSubmitted(true);
@@ -39,14 +39,14 @@ export default function BookingSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-bg relative">
+    <section id="contact" className={`py-6 sm:py-10 md:py-16 bg-bg relative ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="bg-darkSection rounded-[32px] overflow-hidden text-white shadow-2xl border-2 border-white/20">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             
             {/* Left Info Column */}
-            <div className="lg:col-span-5 p-8 sm:p-12 space-y-8 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/15">
+            <div className="lg:col-span-5 order-2 lg:order-1 p-8 sm:p-12 space-y-8 flex flex-col justify-between border-t lg:border-t-0 lg:border-r border-white/15">
               <div className="space-y-6">
                 <span className="text-xs uppercase tracking-widest text-secondary font-extrabold">Online Appointments</span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold font-display text-white tracking-tight">
@@ -60,7 +60,7 @@ export default function BookingSection() {
                   <div className="bg-white/10 p-4 rounded-2xl border border-white/15 space-y-2">
                     <p className="text-[11px] text-emerald-400 font-bold uppercase tracking-wider flex items-center space-x-1.5">
                       <Phone className="w-3.5 h-3.5" />
-                      <span>Direct Helplines / तुरंत संपर्क करें</span>
+                      <span>Direct Helplines</span>
                     </p>
                     <div className="flex flex-wrap items-center gap-2 pt-1">
                       <a href={`tel:${clinic.phones[0]}`} className="bg-white/10 hover:bg-white/20 text-white font-black text-xs px-3.5 py-2 rounded-xl border border-white/20 flex items-center space-x-1.5">
@@ -97,56 +97,68 @@ export default function BookingSection() {
                 <p className="text-sm font-bold text-white">{clinic.doctor} ({clinic.doctorCreds})</p>
               </div>
 
-              {/* Google Maps Embed */}
-              <div className="mt-6 rounded-2xl overflow-hidden border border-white/15 shadow-inner h-48 w-full bg-white/5 relative">
-                <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111666.9536840618!2d75.64214631248037!3d29.13945934446452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391232d8011d0b37%3A0x6b30fbc82b3d1b82!2sHisar%2C%20Haryana!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) contrast(80%)" }} 
-                  allowFullScreen="" 
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Sanjeevani Physiotherapy Location"
-                ></iframe>
-                {/* CSS Filter hack applied above to make map dark mode matching the aesthetic */}
+              {/* Google Maps Embed & Direct Link */}
+              <div className="mt-6 space-y-3">
+                <div className="rounded-2xl overflow-hidden border border-white/15 shadow-inner h-52 w-full bg-white/5 relative group">
+                  <iframe 
+                    src={`https://maps.google.com/maps?q=${encodeURIComponent(clinic.mapQuery)}&t=&z=16&ie=UTF8&iwloc=&output=embed`}
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0, filter: "invert(90%) hue-rotate(180deg) contrast(80%)" }} 
+                    allowFullScreen="" 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Sanjeevani Physiotherapy Location"
+                  ></iframe>
+                </div>
+
+                <a
+                  href={clinic.mapUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full flex items-center justify-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-extrabold py-3 px-4 rounded-xl shadow-lg transition-all border border-emerald-400/30"
+                >
+                  <MapPin className="w-4 h-4 text-white" />
+                  <span>Open Clinic Location on Google Maps</span>
+                  <ExternalLink className="w-3.5 h-3.5 ml-1" />
+                </a>
               </div>
             </div>
 
             {/* Right Booking Form Column */}
-            <div className="lg:col-span-7 p-8 sm:p-12 bg-surface text-textMain">
+            <div className="lg:col-span-7 order-1 lg:order-2 p-8 sm:p-12 bg-surface text-textMain">
               {submitted ? (
                 <div className="py-8 space-y-6">
                   <div className="text-center space-y-3">
                     <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-sm">
                       <CheckCircle2 className="w-9 h-9" />
                     </div>
-                    <h3 className="text-2xl font-bold font-display text-textMain">अपॉइंटमेंट अनुरोध तैयार है!</h3>
+                    <h3 className="text-2xl font-bold font-display text-textMain">Appointment Request Ready!</h3>
                     <p className="text-xs text-muted max-w-sm mx-auto font-medium leading-relaxed">
-                      WhatsApp विंडो खुल रही है। यदि न खुले तो नीचे दिए गए बटन पर क्लिक करें।
+                      WhatsApp window is opening. If it doesn't open automatically, click the button below.
                     </p>
                   </div>
 
                   {/* Summary Card */}
                   <div className="bg-bg/80 rounded-2xl p-5 border border-slate-200 text-xs space-y-2.5">
                     <div className="flex justify-between border-b border-slate-200/60 pb-2">
-                      <span className="text-muted font-medium">मरीज़ का नाम:</span>
+                      <span className="text-muted font-medium">Patient Name:</span>
                       <span className="font-bold text-textMain">{form.name}</span>
                     </div>
                     <div className="flex justify-between border-b border-slate-200/60 pb-2">
-                      <span className="text-muted font-medium">मोबाइल नंबर:</span>
+                      <span className="text-muted font-medium">Mobile Number:</span>
                       <span className="font-bold text-textMain">{form.phone}</span>
                     </div>
                     <div className="flex justify-between border-b border-slate-200/60 pb-2">
-                      <span className="text-muted font-medium">तकलीफ़ / सेवा:</span>
+                      <span className="text-muted font-medium">Condition / Specialty:</span>
                       <span className="font-bold text-primary">{form.condition}</span>
                     </div>
                     <div className="flex justify-between border-b border-slate-200/60 pb-2">
-                      <span className="text-muted font-medium">पसंद की तारीख:</span>
-                      <span className="font-bold text-textMain">{form.date || "यथाशीघ्र (ASAP)"}</span>
+                      <span className="text-muted font-medium">Preferred Date:</span>
+                      <span className="font-bold text-textMain">{form.date || "As Soon As Possible (ASAP)"}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-muted font-medium">समय स्लॉट:</span>
+                      <span className="text-muted font-medium">Time Slot:</span>
                       <span className="font-bold text-textMain">{form.time}</span>
                     </div>
                   </div>
@@ -159,7 +171,7 @@ export default function BookingSection() {
                       className="w-full flex items-center justify-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs py-3.5 rounded-xl shadow-md transition-all"
                     >
                       <MessageCircle className="w-4 h-4" />
-                      <span>WhatsApp में मैसेज भेजें</span>
+                      <span>Send Message on WhatsApp</span>
                       <ExternalLink className="w-3.5 h-3.5 ml-1" />
                     </a>
 
@@ -170,7 +182,7 @@ export default function BookingSection() {
                         className="flex items-center justify-center space-x-1.5 bg-white text-textMain font-bold text-xs py-2.5 rounded-xl border border-slate-300 hover:bg-slate-50 transition-colors"
                       >
                         {copied ? <Check className="w-3.5 h-3.5 text-emerald-600" /> : <Copy className="w-3.5 h-3.5 text-slate-500" />}
-                        <span>{copied ? "कॉपी हो गया!" : "मैसेज कॉपी करें"}</span>
+                        <span>{copied ? "Copied!" : "Copy Message"}</span>
                       </button>
 
                       <button
@@ -178,7 +190,7 @@ export default function BookingSection() {
                         onClick={() => setSubmitted(false)}
                         className="flex items-center justify-center space-x-1.5 bg-bg text-textMain font-bold text-xs py-2.5 rounded-xl border border-slate-300 hover:bg-slate-200 transition-colors"
                       >
-                        <span>नया फ़ॉर्म भरें</span>
+                        <span>Fill New Form</span>
                       </button>
                     </div>
                   </div>
@@ -226,14 +238,9 @@ export default function BookingSection() {
                       onChange={(e) => setForm({ ...form, condition: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border-2 border-slate-300 text-xs font-bold text-textMain bg-white focus:border-primary focus:outline-none"
                     >
-                      <option value="Knee Osteoarthritis & Pain">Knee Osteoarthritis & Pain</option>
-                      <option value="Cervical Spondylosis & Neck Pain">Cervical & Neck Pain</option>
-                      <option value="Back Pain & Slip Disc">Back Pain & Slip Disc</option>
-                      <option value="Sciatica Nerve Pain">Sciatica Nerve Pain</option>
-                      <option value="Frozen Shoulder">Frozen Shoulder</option>
-                      <option value="Stroke & Paralysis Rehab">Stroke & Paralysis Rehab</option>
-                      <option value="Sports Injury">Sports Injury (ACL / Ligament)</option>
-                      <option value="Slimming & Weight Loss">Slimming & Weight Loss</option>
+                      {therapyOptions.map((opt, i) => (
+                        <option key={i} value={opt}>{opt}</option>
+                      ))}
                     </select>
                   </div>
 

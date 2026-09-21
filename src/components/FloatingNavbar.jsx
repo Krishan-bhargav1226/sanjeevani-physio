@@ -1,13 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { clinic } from "../data/content";
 import { Menu, X, ArrowUpRight, Calendar, Phone } from "lucide-react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 
 export default function FloatingNavbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
-  // Close mobile menu on Escape key press
+  // Close mobile drawer on route change
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location]);
+
+  // Close mobile drawer on Escape key
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") setMobileMenuOpen(false);
@@ -16,12 +22,11 @@ export default function FloatingNavbar() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  // Handle scroll shrink effect
+  // Handle scroll shrink state
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 30);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -37,38 +42,38 @@ export default function FloatingNavbar() {
 
   return (
     <>
-      <div className="fixed top-4 md:top-6 inset-x-0 z-50 px-4 pointer-events-none flex justify-center">
+      <div className="fixed top-2 sm:top-4 md:top-6 inset-x-0 z-50 px-2 sm:px-4 pointer-events-none flex justify-center">
         <nav
           role="navigation"
           aria-label="Main navigation"
           className={`w-full max-w-[1240px] pointer-events-auto rounded-full bg-darkSection/95 backdrop-blur-2xl border-2 border-white/20 shadow-pill transition-all duration-300 ${isScrolled
-              ? "py-3 px-6 md:px-8 shadow-2xl scale-[0.99] border-primary/50 bg-darkSection"
-              : "py-4 px-6 md:py-4.5 md:px-9"
+              ? "py-1.5 px-2.5 sm:px-4 md:px-8 shadow-2xl scale-[0.99] border-emerald-500/40 bg-darkSection"
+              : "py-2 px-2.5 sm:px-6 md:py-4 md:px-9"
             }`}
         >
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between w-full min-w-0">
 
-            {/* LEFT: Logo & Subtitle */}
-            <Link to="/" className="flex items-center space-x-3 group">
-              <div className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white p-0.5 shadow-lg group-hover:scale-105 transition-transform flex-shrink-0">
+            {/* LEFT: Clinic Brand Logo */}
+            <Link to="/" className="flex items-center space-x-1.5 sm:space-x-3 group flex-shrink min-w-0 mr-1">
+              <div className="w-7 h-7 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full bg-white p-0.5 shadow-lg group-hover:scale-105 transition-transform flex-shrink-0">
                 <img src="/images/logo.png" alt="Sanjeevani Logo" className="w-full h-full object-contain rounded-full" />
               </div>
-              <div className="flex flex-col">
-                <div className="flex items-center space-x-2">
-                  <span className="text-white font-extrabold tracking-tight text-base md:text-lg font-display">
+              <div className="flex flex-col min-w-0">
+                <div className="flex items-center space-x-1 sm:space-x-2">
+                  <span className="text-white font-extrabold tracking-tight text-xs xs:text-sm sm:text-base md:text-lg font-display truncate">
                     SANJEEVANI
                   </span>
                   <span className="bg-secondary text-white text-[10px] font-black px-2 py-0.5 rounded-full hidden xl:inline-block">
                     HISAR
                   </span>
                 </div>
-                <span className="text-[10px] md:text-xs text-primary-light font-extrabold tracking-wider -mt-0.5">
+                <span className="text-[8px] xs:text-[9px] sm:text-[10px] md:text-xs text-emerald-400 font-extrabold tracking-wider -mt-0.5 truncate hidden xs:block">
                   Physiotherapy & Slimming Centre
                 </span>
               </div>
             </Link>
 
-            {/* CENTER: Navigation Links */}
+            {/* CENTER: Navigation Links (Desktop) */}
             <div className="hidden lg:flex items-center space-x-1 xl:space-x-2 bg-white/5 p-1.5 rounded-full border border-white/10">
               {navLinks.map((link) => (
                 <NavLink
@@ -86,35 +91,36 @@ export default function FloatingNavbar() {
               ))}
             </div>
 
-            {/* RIGHT: CTAs */}
-            <div className="flex items-center space-x-3">
+            {/* RIGHT: CTAs (Call, Book, Mobile Menu Toggle) */}
+            <div className="flex items-center space-x-1 sm:space-x-3 flex-shrink-0">
               <a
                 href={`tel:${clinic.phones[0]}`}
-                className="hidden sm:flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white text-xs font-bold px-4 py-2.5 rounded-full border border-white/15 transition-all"
+                className="hidden md:flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white text-xs font-bold px-4 py-2.5 rounded-full border border-white/15 transition-all"
               >
-                <Phone className="w-3.5 h-3.5 text-secondary" />
+                <Phone className="w-3.5 h-3.5 text-emerald-400" />
                 <span className="hidden xl:inline">{clinic.phones[0]}</span>
                 <span className="xl:hidden">Call</span>
               </a>
 
               <Link
                 to="/contact"
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary to-secondary hover:from-primary-hover hover:to-primary text-white text-xs md:text-sm font-extrabold px-5 md:px-6 py-2.5 md:py-3 rounded-full shadow-lg shadow-primary/40 transition-all hover:scale-105 border border-white/20"
+                className="inline-flex items-center space-x-1 sm:space-x-2 bg-gradient-to-r from-primary to-secondary hover:from-primary-hover hover:to-primary text-white text-[10px] xs:text-xs md:text-sm font-extrabold px-2.5 xs:px-3.5 sm:px-5 md:px-6 py-1.5 sm:py-2.5 md:py-3 rounded-full shadow-lg shadow-primary/40 transition-all hover:scale-105 border border-white/20 flex-shrink-0"
               >
-                <Calendar className="w-4 h-4 text-white" />
-                <span>Book Appointment</span>
-                <ArrowUpRight className="w-4 h-4 text-white hidden sm:inline" />
+                <Calendar className="w-3 h-3 xs:w-3.5 xs:h-3.5 sm:w-4 sm:h-4 text-white flex-shrink-0" />
+                <span className="whitespace-nowrap">
+                  Book <span className="hidden min-[360px]:inline">Appointment</span>
+                </span>
+                <ArrowUpRight className="w-4 h-4 text-white hidden md:inline" />
               </Link>
 
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2.5 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors focus:ring-2 focus:ring-white"
+                className="lg:hidden p-1.5 sm:p-2.5 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors focus:ring-2 focus:ring-white flex-shrink-0 flex items-center justify-center"
                 aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
                 aria-expanded={mobileMenuOpen}
-                aria-controls="mobile-menu"
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? <X className="w-4 h-4 sm:w-6 sm:h-6" /> : <Menu className="w-4 h-4 sm:w-6 sm:h-6" />}
               </button>
             </div>
 
@@ -122,21 +128,21 @@ export default function FloatingNavbar() {
         </nav>
       </div>
 
-      {/* Fullscreen Mobile Overlay Drawer */}
+      {/* Fullscreen Mobile Navigation Drawer */}
       {mobileMenuOpen && (
         <div
           id="mobile-menu"
           role="region"
           aria-label="Mobile Navigation Menu"
-          className="fixed inset-0 z-40 bg-darkSection text-white flex flex-col justify-between p-8 pt-28 lg:hidden animate-fadeIn overflow-y-auto"
+          className="fixed inset-0 z-40 bg-darkSection text-white flex flex-col justify-between p-6 sm:p-8 pt-24 lg:hidden animate-fadeIn overflow-y-auto"
         >
           <div className="space-y-6">
             <div className="flex flex-col space-y-1 pb-4 border-b border-white/10">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-black text-emerald-400 tracking-wider">संजीवनी फिजियोथेरेपी सेंटर</span>
+                <span className="text-xs font-black text-emerald-400 tracking-wider">Sanjeevani Physiotherapy Centre</span>
                 <span className="text-[11px] text-emerald-400 font-bold bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-500/30">🟢 9 AM - 8 PM</span>
               </div>
-              <span className="text-xs text-slate-300 font-semibold">{clinic.taglineHindi}</span>
+              <span className="text-xs text-slate-300 font-semibold">{clinic.tagline}</span>
             </div>
 
             <div className="flex flex-col space-y-2">
@@ -146,7 +152,7 @@ export default function FloatingNavbar() {
                   to={link.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={({ isActive }) =>
-                    `text-xl sm:text-2xl font-extrabold font-display transition-colors py-2 border-b border-white/5 flex items-center justify-between ${isActive ? "text-emerald-400" : "text-white hover:text-emerald-400"
+                    `text-xl sm:text-2xl font-extrabold font-display transition-colors py-2.5 border-b border-white/5 flex items-center justify-between ${isActive ? "text-emerald-400" : "text-white hover:text-emerald-400"
                     }`
                   }
                 >
@@ -157,14 +163,14 @@ export default function FloatingNavbar() {
             </div>
           </div>
 
-          <div className="space-y-3 pt-6 border-t border-white/10 mt-4 mb-8 sm:mb-0">
+          <div className="space-y-3 pt-6 border-t border-white/10 mt-4 mb-8">
             <Link
               to="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className="w-full flex items-center justify-center space-x-2 bg-gradient-to-r from-primary to-primary-hover text-white font-extrabold py-3.5 rounded-2xl shadow-xl text-sm"
             >
               <Calendar className="w-4 h-4" />
-              <span>अपॉइंटमेंट बुक करें (Book Appointment)</span>
+              <span>Book Appointment</span>
             </Link>
 
             <div className="grid grid-cols-2 gap-2">

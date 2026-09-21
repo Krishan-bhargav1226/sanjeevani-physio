@@ -1,5 +1,5 @@
 import React from "react";
-import { clinic, services } from "../data/content";
+import { clinic, services, specializedTherapies } from "../data/content";
 import { ArrowUpRight, CheckCircle2, Sparkles, Phone, ShieldCheck, HeartPulse, Activity, Zap, Dumbbell, Trophy, Brain } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -55,7 +55,7 @@ export default function SwissHero() {
           animate="visible"
           className="max-w-5xl space-y-6"
         >
-          {/* Top Kicker Floating Badge - Featuring Hindi Tagline */}
+          {/* Top Kicker Floating Badge */}
           <motion.div variants={itemVariants} className="inline-block">
             <motion.div 
               whileHover={{ scale: 1.03 }}
@@ -65,17 +65,17 @@ export default function SwissHero() {
             >
               <img src="/images/logo.png" alt="Sanjeevani Logo" width="24" height="24" className="w-5 h-5 sm:w-6 sm:h-6 object-contain rounded-full bg-white p-0.5 shadow-sm" />
               <Sparkles className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-              <span className="text-white font-extrabold">{clinic.taglineHindi}</span>
-              <span className="text-emerald-400 font-bold hidden sm:inline">• {clinic.nameHindi}</span>
+              <span className="text-white font-extrabold">{clinic.name}</span>
+              <span className="text-emerald-400 font-bold hidden sm:inline">• {clinic.tagline}</span>
             </motion.div>
           </motion.div>
 
-          {/* Main Display Headline with Hindi Slogans */}
+          {/* Main Display Headline */}
           <motion.div variants={itemVariants} className="space-y-2">
             <h1 className="heading-display text-textMain tracking-tight">
-              {clinic.nameHindi} <br />
+              Sanjeevani Physiotherapy & Slimming Centre <br />
               <span className="text-shimmer text-2xl sm:text-4xl md:text-5xl block mt-1 font-extrabold">
-                {clinic.subTaglineHindi}
+                Non-Surgical Spine & Joint Care Specialist
               </span>
             </h1>
           </motion.div>
@@ -85,7 +85,7 @@ export default function SwissHero() {
             
             <div className="lg:col-span-7 space-y-6">
               <p className="text-sm sm:text-lg lg:text-xl text-muted leading-relaxed font-medium max-w-2xl">
-                बिना ऑपरेशन गर्दन, पीठ, कमर व घुटनों के दर्द का वैज्ञानिक उपचार। <strong className="text-textMain font-bold underline decoration-primary/40 underline-offset-4">{clinic.doctor} ({clinic.doctorCreds})</strong> द्वारा हिसार कैंट में।
+                Evidence-based non-surgical recovery for neck, back, spine & joint pain by <strong className="text-textMain font-bold underline decoration-primary/40 underline-offset-4">{clinic.doctor} ({clinic.doctorCreds})</strong> in Hisar Cantt.
               </p>
 
               {/* Action Buttons */}
@@ -95,7 +95,7 @@ export default function SwissHero() {
                     to="/contact"
                     className="inline-flex items-center justify-center space-x-3 bg-gradient-to-r from-primary to-primary-hover text-white text-sm sm:text-base font-extrabold px-7 py-4 rounded-full shadow-2xl shadow-primary/30 transition-all border border-white/20 w-full sm:w-auto"
                   >
-                    <span>अपॉइंटमेंट बुक करें</span>
+                    <span>Book Appointment</span>
                     <ArrowUpRight className="w-5 h-5 text-white" />
                   </Link>
                 </motion.div>
@@ -127,15 +127,15 @@ export default function SwissHero() {
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-3">
                 <motion.div whileHover={{ y: -2 }} className="flex items-center space-x-2 text-xs font-extrabold text-textMain bg-surface p-3 rounded-2xl border border-slate-200 shadow-sm">
                   <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0" />
-                  <span>8+ वर्ष अनुभव</span>
+                  <span>8+ Years Experience</span>
                 </motion.div>
                 <motion.div whileHover={{ y: -2 }} className="flex items-center space-x-2 text-xs font-extrabold text-textMain bg-surface p-3 rounded-2xl border border-slate-200 shadow-sm">
                   <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span>5000+ स्वस्थ मरीज़</span>
+                  <span>5000+ Happy Patients</span>
                 </motion.div>
                 <motion.div whileHover={{ y: -2 }} className="flex items-center space-x-2 text-xs font-extrabold text-textMain bg-surface p-3 rounded-2xl border border-slate-200 shadow-sm col-span-2 sm:col-span-1">
                   <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0" />
-                  <span>100% गैर-सर्जिकल</span>
+                  <span>100% Non-Surgical</span>
                 </motion.div>
               </div>
 
@@ -160,40 +160,38 @@ export default function SwissHero() {
                   <div>
                     <h4 className="font-black text-textMain text-base font-display">{clinic.doctor}</h4>
                     <p className="text-xs text-primary font-bold">{clinic.doctorCreds}</p>
-                    <p className="text-xs text-secondary font-extrabold">{clinic.doctorRoleHindi} (Chief Specialist)</p>
+                    <p className="text-xs text-secondary font-extrabold">{clinic.doctorRole}</p>
                   </div>
                 </div>
 
                 <div className="bg-bg p-3.5 rounded-2xl border border-slate-200 text-xs text-textMain font-semibold leading-relaxed">
-                  "हमारा लक्ष्य हर मरीज़ को दर्द से स्थाई राहत देना और बिना ऑपरेशन के उनका सामान्य जीवन पुनः बहाल करना है।"
+                  "Our mission is to eliminate root-cause pain and restore natural mobility without invasive surgery."
                 </div>
               </motion.div>
             </motion.div>
 
           </motion.div>
 
-          {/* 5 Therapy Cards Pill Strip - Direct Banner Replication */}
+          {/* 13 Specialized Therapies Pill Strip */}
           <motion.div variants={itemVariants} className="pt-6">
             <div className="bg-darkSection p-4 sm:p-5 rounded-3xl border-2 border-emerald-500/30 shadow-xl space-y-3">
               <div className="flex items-center justify-between">
                 <span className="text-[11px] font-extrabold uppercase tracking-widest text-emerald-400 flex items-center space-x-2">
                   <Sparkles className="w-3.5 h-3.5" />
-                  <span>मुख्य उपचार एवं थैरेपी (5 Core Therapies)</span>
+                  <span>13 Specialized Treatments & Therapies</span>
                 </span>
-                <span className="text-[10px] text-slate-300 font-bold hidden sm:inline">बिना ऑपरेशन इलाज</span>
+                <span className="text-[10px] text-slate-300 font-bold hidden sm:inline">Sterile Non-Surgical Protocols</span>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
-                {services.slice(0, 5).map((srv) => (
+              <div className="flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-none">
+                {specializedTherapies.map((th) => (
                   <Link
-                    key={srv.id}
+                    key={th.id}
                     to="/treatments"
-                    className="flex items-center space-x-2 bg-white/10 hover:bg-white/20 p-2.5 rounded-2xl border border-white/15 transition-all text-white group"
+                    className="flex items-center space-x-2 bg-white/10 hover:bg-white/20 px-3.5 py-2 rounded-2xl border border-white/15 transition-all text-white whitespace-nowrap group flex-shrink-0"
                   >
-                    <div className="p-1.5 rounded-xl bg-white/10 group-hover:scale-110 transition-transform">
-                      {getTherapyIcon(srv.id)}
-                    </div>
-                    <span className="text-xs font-bold leading-tight line-clamp-1">{srv.titleHindi}</span>
+                    <Zap className="w-3.5 h-3.5 text-emerald-400 group-hover:scale-110 transition-transform" />
+                    <span className="text-xs font-bold">{th.title}</span>
                   </Link>
                 ))}
               </div>
@@ -227,8 +225,8 @@ export default function SwissHero() {
             <div className="glass-pill p-3.5 sm:px-6 sm:py-4 rounded-2xl border border-white/20 max-w-xl flex items-center space-x-3 sm:space-x-4 shadow-xl w-full sm:w-auto">
               <img src="/images/logo.png" alt="Sanjeevani Emblem" width="48" height="48" className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-full bg-white p-1 flex-shrink-0 shadow-lg" />
               <div>
-                <h4 className="font-extrabold text-xs sm:text-base text-white font-display">संजीवनी फिजियोथेरेपी सेंटर</h4>
-                <p className="text-[11px] sm:text-xs text-slate-200 mt-0.5 font-medium">{clinic.addressHindi}</p>
+                <h4 className="font-extrabold text-xs sm:text-base text-white font-display">Sanjeevani Physiotherapy & Slimming Centre</h4>
+                <p className="text-[11px] sm:text-xs text-slate-200 mt-0.5 font-medium">{clinic.address}</p>
               </div>
             </div>
             
@@ -236,7 +234,7 @@ export default function SwissHero() {
               to="/contact"
               className="bg-primary hover:bg-primary-hover text-white font-extrabold text-xs px-5 sm:px-6 py-3 sm:py-3.5 rounded-full shadow-lg border border-white/20 transition-all hover:scale-105 w-full sm:w-auto text-center"
             >
-              डायरेक्ट अपॉइंटमेंट बुक करें
+              Book Direct Consultation
             </Link>
           </div>
         </motion.div>

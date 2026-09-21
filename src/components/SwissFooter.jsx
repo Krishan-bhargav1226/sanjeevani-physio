@@ -19,17 +19,17 @@ export default function SwissFooter() {
                 <span className="text-xl font-extrabold font-display text-white tracking-tight block">
                   SANJEEVANI
                 </span>
-                <span className="text-xs text-emerald-400 font-bold block">{clinic.nameHindi}</span>
+                <span className="text-xs text-emerald-400 font-bold block">{clinic.tagline}</span>
               </div>
             </div>
             <p className="text-xs text-slate-300 font-bold">
-              "{clinic.taglineHindi}" • {clinic.subTaglineHindi}
+              "{clinic.tagline}" • {clinic.subTaglineHindi}
             </p>
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
               Sanjeevani Physiotherapy & Slimming Centre is a modern, evidence-based healthcare practice in Hisar Cantt dedicated to non-surgical joint, spine & rehabilitation care under Dr. Sohan Lal.
             </p>
             <div className="pt-2 text-xs text-slate-400">
-              <p className="font-bold text-white">{clinic.doctor} ({clinic.doctorCreds}) - {clinic.doctorRoleHindi}</p>
+              <p className="font-bold text-white">{clinic.doctor} ({clinic.doctorCreds}) - {clinic.doctorRole}</p>
               <p>{clinic.doctorExperience}</p>
             </div>
           </div>
@@ -55,13 +55,15 @@ export default function SwissFooter() {
             </div>
             
             <div className="pt-2">
-              <Link
-                to="/contact"
-                className="inline-flex items-center space-x-1 text-xs font-bold text-secondary hover:text-white"
+              <a
+                href={clinic.mapUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center space-x-1.5 text-xs font-extrabold text-emerald-400 hover:text-white bg-white/10 px-3.5 py-2 rounded-xl border border-white/15 transition-all"
               >
                 <span>Get Directions on Google Maps</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
-              </Link>
+              </a>
             </div>
           </div>
 

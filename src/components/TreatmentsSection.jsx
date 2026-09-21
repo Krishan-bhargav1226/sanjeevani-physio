@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { services, painConditions } from "../data/content";
+import { services, painConditions, specializedTherapies } from "../data/content";
 import { Zap, Activity, Dumbbell, Trophy, Brain, Flame, CheckCircle2, ArrowUpRight, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -47,10 +47,10 @@ export default function TreatmentsSection() {
         >
           <p className="text-xs uppercase tracking-widest text-primary font-extrabold">Clinical Specialties</p>
           <h2 className="heading-title text-textMain">
-            Evidence-based physiotherapy engineered for lasting pain relief.
+            Evidence-based physiotherapy & specialized therapy modalities.
           </h2>
           <p className="text-base text-muted font-medium">
-            Combining hands-on joint mobilization, electrotherapy technology, and personalized active rehabilitation.
+            Featuring 13 specialized non-surgical therapies — Dry Needling, Hijama Cupping, IASTM, K-Taping, TENS, IFT, Ultrasound, Muscle Stim & Intermittent Spinal Traction.
           </p>
         </motion.div>
 
@@ -116,7 +116,7 @@ export default function TreatmentsSection() {
           </div>
         </div>
 
-        {/* 2. Services Grid */}
+        {/* 2. Core Clinical Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <TiltCard key={service.id}>
@@ -135,7 +135,7 @@ export default function TreatmentsSection() {
 
                   <div>
                     <span className="text-xs font-black text-secondary uppercase tracking-wider block font-sans">
-                      {service.titleHindi}
+                      {service.badge}
                     </span>
                     <h3 className="text-xl font-bold font-display text-textMain group-hover:text-primary transition-colors mt-0.5">
                       {service.title}
@@ -168,6 +168,63 @@ export default function TreatmentsSection() {
               </div>
             </TiltCard>
           ))}
+        </div>
+
+        {/* 3. 13 Specialized Treatments & Therapies Provided Grid */}
+        <div className="mt-20 space-y-8">
+          <div className="space-y-2">
+            <span className="text-xs uppercase tracking-wider font-extrabold text-primary">All Specialized Modalities & Procedures</span>
+            <h3 className="text-2xl sm:text-3xl font-bold font-display text-textMain">13 Specialized Treatments & Therapies Provided</h3>
+            <p className="text-xs sm:text-sm text-muted">Advanced clinical procedures performed under sterile protocols by Dr. Sohan Lal.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {specializedTherapies.map((therapy) => (
+              <div
+                key={therapy.id}
+                className="bg-surface rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-primary/40 transition-all flex flex-col justify-between group space-y-4"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-black uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                      {therapy.badge}
+                    </span>
+                    <span className="text-[10px] font-bold text-slate-400">{therapy.category}</span>
+                  </div>
+
+                  <h4 className="text-lg font-bold font-display text-textMain group-hover:text-primary transition-colors">
+                    {therapy.title}
+                  </h4>
+
+                  <p className="text-xs text-muted leading-relaxed font-medium">
+                    {therapy.desc}
+                  </p>
+
+                  <div className="pt-2 space-y-1.5">
+                    <p className="text-[11px] font-extrabold text-textMain uppercase tracking-wider">Clinical Benefits:</p>
+                    <div className="grid grid-cols-1 gap-1">
+                      {therapy.benefits.map((b, i) => (
+                        <div key={i} className="flex items-center text-[11px] text-slate-600 font-semibold">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-primary mr-1.5 flex-shrink-0" />
+                          <span>{b}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
+                  <Link
+                    to="/contact"
+                    className="w-full flex items-center justify-center space-x-2 bg-darkSection hover:bg-primary text-white text-xs font-bold py-2.5 rounded-xl transition-all shadow-sm"
+                  >
+                    <Zap className="w-3.5 h-3.5 text-secondary" />
+                    <span>Book {therapy.title}</span>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
       </div>

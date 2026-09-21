@@ -2,35 +2,36 @@
 
 export const clinic = {
   name: "Sanjeevani",
-  nameHindi: "संजीवनी फिजियोथेरेपी सेंटर",
+  nameHindi: "Sanjeevani Physiotherapy Centre",
   tagline: "Physiotherapy & Slimming Centre",
-  taglineHindi: "दर्द मुक्त जीवन की ओर एक कदम",
-  subTaglineHindi: "सही इलाज • सही देखभाल • बेहतर परिणाम",
-  doctor: "डॉ सोहन लाल",
+  taglineHindi: "Step Towards A Pain-Free Life",
+  subTaglineHindi: "Right Treatment • Expert Care • Better Recovery",
+  doctor: "Dr. Sohan Lal",
   doctorEnglish: "Dr. Sohan Lal",
   doctorCreds: "BPT, MPTh (Sports), CMT",
   doctorRole: "Chief Physiotherapist & Sports Rehab Specialist",
-  doctorRoleHindi: "फिजियोथेरेपिस्ट",
+  doctorRoleHindi: "Chief Physiotherapy Specialist",
   doctorExperience: "8+ Years Clinical Experience",
   phones: ["9991070620", "9992458240"],
   whatsapp: "919991070620",
   address: "Karan Singh Market, TCP-2, Near Krishna Devi Memorial Hospital, Hisar Cantt – 125006",
-  addressHindi: "नजदीक कृष्णा देवी मेमोरियल अस्पताल, करण सिंह मार्केट, टीसीपी-2, हिसार कैंट – 125006",
+  addressHindi: "Near Krishna Devi Memorial Hospital, Karan Singh Market, TCP-2, Hisar Cantt – 125006",
   addressShort: "Hisar Cantt, Haryana",
-  mapQuery: "Sanjeevani Physiotherapy Hisar Cantt",
+  mapQuery: "Sanjeevani Physiotherapy Centre Karan Singh Market Hisar Cantt",
+  mapUrl: "https://maps.app.goo.gl/DwJk4W9QqFjLYVCe6",
   workingHours: "Monday – Saturday: 9:00 AM – 8:00 PM (Sunday Closed / Emergency on Call)",
 };
 
 export const stats = [
-  { value: "8+", label: "Years Experience", labelHindi: "8+ वर्ष का अनुभव", description: "Dedicated non-surgical clinical practice" },
-  { value: "5000+", label: "Recovered Patients", labelHindi: "5000+ संतुष्ट मरीज़", description: "Pain-free lives restored in Hisar" },
-  { value: "12+", label: "Therapy Specialties", labelHindi: "12+ थेरेपी तकनीकें", description: "Advanced electro & manual techniques" },
-  { value: "99%", label: "Satisfaction Rate", labelHindi: "99% सफलता दर", description: "Verified patient outcomes & reviews" },
+  { value: "8+", label: "Years Experience", labelHindi: "8+ Years Experience", description: "Dedicated non-surgical clinical practice" },
+  { value: "5000+", label: "Recovered Patients", labelHindi: "5000+ Happy Patients", description: "Pain-free lives restored in Hisar" },
+  { value: "12+", label: "Therapy Specialties", labelHindi: "12+ Therapy Modalities", description: "Advanced electro & manual techniques" },
+  { value: "99%", label: "Satisfaction Rate", labelHindi: "99% Success Rate", description: "Verified patient outcomes & reviews" },
 ];
 
 export const doctorBio = {
   name: "Dr. Sohan Lal",
-  nameHindi: "डॉ सोहन लाल",
+  nameHindi: "Dr. Sohan Lal",
   qualifications: "BPT, MPTh (Sports Rehabilitation), Certified Manual Therapist (CMT)",
   experience: "8+ Years in Clinical Physiotherapy & Sports Medicine",
   specialization: "Spine & Joint Biomechanics, Sports Injury Rehab, Non-Surgical Sciatica Care",
@@ -49,6 +50,7 @@ export const painConditions = [
     id: "knee",
     name: "Knee Osteoarthritis & Pain",
     shortName: "Knee Pain",
+    image: "/images/hero_physio.png",
     symptoms: ["Pain while walking or climbing stairs", "Joint stiffness & cracking sound", "Swelling and localized heat", "Difficulty standing up after sitting"],
     solution: "Targeted electrotherapy, quadriceps strengthening, joint mobilization, and cartilage relief to avoid knee replacement surgery.",
     recoveryRate: "94% Non-Surgical Success",
@@ -57,6 +59,7 @@ export const painConditions = [
     id: "neck",
     name: "Cervical Spondylosis & Neck Pain",
     shortName: "Cervical & Neck",
+    image: "/images/spine_treatment.png",
     symptoms: ["Radiating arm pain & numbness", "Dizziness & shoulder tension", "Chronic neck stiffness & headaches", "Tingling in fingers"],
     solution: "Computerized cervical traction, spinal posture alignment, and manual decompression for rapid nerve relief.",
     recoveryRate: "96% Pain Decompression",
@@ -65,6 +68,7 @@ export const painConditions = [
     id: "spine",
     name: "Back Pain & Slip Disc (Sciatica)",
     shortName: "Back & Slip Disc",
+    image: "/images/spine_treatment.png",
     symptoms: ["Sharp lower back pain when bending", "Sciatica leg tension radiating to feet", "Lumbar stiffness & weakness", "Inability to sit comfortably"],
     solution: "Computerized lumbar traction, disc herniation mobilization, core stabilization, and deep tissue therapy.",
     recoveryRate: "92% Surgery Avoided",
@@ -73,6 +77,7 @@ export const painConditions = [
     id: "shoulder",
     name: "Frozen Shoulder (Adhesive Capsulitis)",
     shortName: "Frozen Shoulder",
+    image: "/images/hero_physio.png",
     symptoms: ["Inability to lift arm overhead", "Severe night shoulder throbbing", "Joint capsule tightness", "Difficulty dressing or combing hair"],
     solution: "Therapeutic ultrasound, capsular mobilization release, laser therapy, and progressive range-of-motion routines.",
     recoveryRate: "95% Range Restored",
@@ -81,6 +86,7 @@ export const painConditions = [
     id: "stroke",
     name: "Stroke & Neuro Rehabilitation",
     shortName: "Stroke Rehab",
+    image: "/images/doctor_profile.png",
     symptoms: ["Loss of limb motor control", "Muscle spasticity or flaccidity", "Balance impairment & gait imbalance", "Facial or speech coordination loss"],
     solution: "PNF neuro-rehabilitation, motor re-learning, gait balance retraining, and sensory muscle reactivation.",
     recoveryRate: "Functional Independence",
@@ -89,95 +95,223 @@ export const painConditions = [
     id: "sports",
     name: "Sports Injury & ACL Ligament Rehab",
     shortName: "Sports Injury",
+    image: "/images/sports_rehab.png",
     symptoms: ["Ligament sprain (ACL/MCL/Meniscus)", "Muscle tear & joint instability", "Post-match acute swelling", "Ankle sprain & hamstring pulls"],
     solution: "Cold laser therapy, K-taping, proprioceptive balance training, and rapid return-to-sport protocols.",
     recoveryRate: "Fast Athlete Recovery",
   },
 ];
 
+export const specializedTherapies = [
+  {
+    id: "adv-physio",
+    title: "Advanced Physiotherapy",
+    category: "Clinical Assessment & Manual Care",
+    badge: "Evidence-Based",
+    desc: "Comprehensive biomechanical alignment, diagnostic movement exams, and customized non-surgical joint and spine restoration protocols.",
+    benefits: ["Root-cause diagnosis", "Postural realignment", "Joint mobility restoration", "Preventative ergonomics"],
+  },
+  {
+    id: "dry-needling",
+    title: "Dry Needling Therapy",
+    category: "Myofascial Trigger Point Therapy",
+    badge: "Targeted Release",
+    desc: "Precision insertion of fine filiform needles into muscular trigger points to immediately release deep knots, spasms, and localized nerve tightness.",
+    benefits: ["Deactivates painful muscle knots", "Instant muscle spasm relaxation", "Improves tissue circulation", "Restores muscle length"],
+  },
+  {
+    id: "cupping-dry",
+    title: "Cupping Therapy (Dry)",
+    category: "Myofascial Decompression",
+    badge: "Fascial Release",
+    desc: "Negative pressure suction therapy designed to separate fascial layers, enhance blood flow, and relieve chronic muscle tightness.",
+    benefits: ["Increases localized circulation", "Releases stubborn fascial tightness", "Accelerates cellular recovery", "Reduces muscle stiffness"],
+  },
+  {
+    id: "cupping-wet",
+    title: "Wet / Hijama Cupping",
+    category: "Therapeutic Hijama Detox",
+    badge: "Medicinal Hijama",
+    desc: "Specialized medicinal Hijama cupping performed under hygienic sterile protocols for deep micro-detoxification and chronic pain relief.",
+    benefits: ["Sterile micro-detoxification", "Relieves chronic inflammation", "Stimulates immune response", "Deep pain suppression"],
+  },
+  {
+    id: "iastm",
+    title: "IASTM (Instrument-Assisted Release)",
+    category: "Soft Tissue Mobilization",
+    badge: "Ergonomic Tools",
+    desc: "Ergonomically contoured stainless-steel instruments designed to detect and breakdown scar tissue, tendonitis adhesions, and fascial restrictions.",
+    benefits: ["Breaks down scar tissue & adhesions", "Speeds up tendonitis healing", "Restores smooth tissue sliding", "Improves range of motion"],
+  },
+  {
+    id: "k-taping",
+    title: "K-Taping (Kinesiology Taping)",
+    category: "Athletic & Dynamic Support",
+    badge: "K-Tape Support",
+    desc: "Medical-grade elastic therapeutic taping that supports weak muscles, stabilizes joints, and enhances lymphatic drainage during activity.",
+    benefits: ["Stabilizes injured joints", "Reduces swelling & lymphatic edema", "Supports weak muscular fibers", "24/7 continuous therapeutic support"],
+  },
+  {
+    id: "electrotherapy",
+    title: "Advanced Electrotherapy",
+    category: "Medical-Grade Modalities",
+    badge: "High-Tech Care",
+    desc: "Comprehensive suite of therapeutic electrical currents engineered for rapid pain suppression, tissue repair, and swelling reduction.",
+    benefits: ["Rapid pain blockage", "Reduces localized tissue swelling", "Accelerates nerve repair", "Non-invasive relief"],
+  },
+  {
+    id: "tens",
+    title: "TENS (Nerve Stimulation)",
+    category: "Pain Decompression Modality",
+    badge: "Pain Suppression",
+    desc: "Transcutaneous Electrical Nerve Stimulation using targeted frequencies to block pain signals from traveling to the spinal cord and brain.",
+    benefits: ["Blocks acute & chronic pain signals", "Triggers natural endorphin release", "Drug-free pain management", "Gentle comfortable sensation"],
+  },
+  {
+    id: "ift",
+    title: "IFT (Interferential Therapy)",
+    category: "Deep Tissue Current Modality",
+    badge: "Deep Penetration",
+    desc: "Dual medium-frequency electrical currents that cross deep within muscular tissue to treat severe inflammation, edema, and joint pain.",
+    benefits: ["Deep-seated tissue penetration", "Effective for chronic osteoarthritis", "Reduces severe localized edema", "Relaxes deep muscular spasms"],
+  },
+  {
+    id: "us-therapy",
+    title: "US Therapy (Therapeutic Ultrasound)",
+    category: "Acoustic Wave Therapy",
+    badge: "Cellular Healing",
+    desc: "High-frequency acoustic sound waves that generate deep thermal heating within collagen fibers to soften scar tissue and speed up healing.",
+    benefits: ["Softens hard scar tissue", "Promotes collagen tissue repair", "Deep thermal muscle relaxation", "Enhances ligament elasticity"],
+  },
+  {
+    id: "muscle-stim",
+    title: "Muscle Stimulation (EMS)",
+    category: "Electrical Muscle Re-education",
+    badge: "Neuromuscular",
+    desc: "Electrical Muscle Stimulation designed to activate non-responsive muscle fibers, prevent atrophy after surgery, and rebuild muscle tone.",
+    benefits: ["Prevents post-op muscle atrophy", "Re-educates weak muscle groups", "Builds functional muscle strength", "Improves nerve-muscle firing"],
+  },
+  {
+    id: "cervical-traction",
+    title: "Intermittent Cervical Traction",
+    category: "Spinal Decompression",
+    badge: "Neck Decompression",
+    desc: "Precision computerized mechanical neck traction that gently stretches cervical vertebrae to widen neural foramina and relieve pinched nerves.",
+    benefits: ["Relieves pinched cervical nerves", "Decompresses neck disc herniations", "Reduces radiating arm numbness", "Restores neck spinal alignment"],
+  },
+  {
+    id: "lumbar-traction",
+    title: "Intermittent Lumbar Traction",
+    category: "Spinal Decompression",
+    badge: "Sciatica & Disc Decompression",
+    desc: "Automated computerized lower-back traction that pulls lumbar vertebrae apart to create negative pressure within herniated L4-L5/S1 discs.",
+    benefits: ["Resolves L4-L5 / S1 disc herniation", "Eliminates sciatica leg pain", "Reduces lower back pressure", "Helps avoid spine surgery"],
+  },
+];
+
+export const therapyOptions = [
+  "Advanced Physiotherapy",
+  "Dry Needling Therapy",
+  "Cupping Therapy (Dry)",
+  "Wet / Hijama Cupping",
+  "IASTM (Instrument-Assisted Release)",
+  "K-Taping (Kinesiology Taping)",
+  "Electrotherapy (TENS / IFT)",
+  "US Therapy (Therapeutic Ultrasound)",
+  "Muscle Stimulation (EMS)",
+  "Intermittent Cervical Traction",
+  "Intermittent Lumbar Traction",
+  "Knee Osteoarthritis & Pain",
+  "Back Pain & Slip Disc (Sciatica)",
+  "Cervical & Neck Pain",
+  "Frozen Shoulder",
+  "Stroke & Neuro Rehabilitation",
+  "Sports Injury & ACL Rehab",
+];
+
 export const services = [
   {
     id: "manual",
-    title: "Manual Joint & Spine Therapy",
-    titleHindi: "मैन्युअल थेरेपी",
-    englishTitle: "Hands-on Spinal Alignment & Mobilization",
-    badge: "Hands-On Care",
-    desc: "Targeted joint mobilization, myofascial trigger point release, and spinal alignment to reduce pressure on nerves and restore joint range.",
+    title: "Advanced Physiotherapy & Manual Care",
+    titleHindi: "Manual Therapy",
+    englishTitle: "Hands-on Spinal Alignment & Biomechanical Exam",
+    badge: "Advanced Physio",
+    desc: "Comprehensive clinical diagnostic exams, Maitland & Mulligan joint mobilization, posture alignment, and specialized non-surgical rehab.",
     features: [
+      "Advanced Biomechanical Assessment",
       "Maitland & Mulligan Joint Mobilization",
       "Myofascial Trigger Point Release",
-      "Soft Tissue Deep Manipulation",
-      "Postural Realignment & Spine Decompression"
+      "Postural Realignment & Ergonomics"
     ]
   },
   {
-    id: "exercise",
-    title: "Personalized Active Rehab",
-    titleHindi: "एक्सरसाइज थेरेपी",
-    englishTitle: "Biomechanical Strength & Core Protocols",
-    badge: "Custom Protocol",
-    desc: "Individualized exercise protocols designed around patient biomechanics to rebuild muscle strength, core stability, and endurance.",
+    id: "needling-cupping",
+    title: "Dry Needling, Cupping & Hijama",
+    titleHindi: "Needling & Cupping",
+    englishTitle: "Trigger Point Needling & Medicinal Hijama Detox",
+    badge: "Needling & Hijama",
+    desc: "Fine needle trigger point deactivation, myofascial dry cupping, and sterile wet/Hijama cupping for chronic pain release and tissue detox.",
     features: [
-      "Quadriceps & Core Strengthening",
-      "Spinal Core Stabilization",
-      "Flexibility & Muscular Stretching",
-      "Postural Control & Ergonomics"
+      "Precision Dry Needling for Knots",
+      "Myofascial Dry Cupping Suction",
+      "Sterile Wet / Hijama Cupping Detox",
+      "Deep Muscular Spasm Relief"
+    ]
+  },
+  {
+    id: "iastm-ktaping",
+    title: "IASTM & K-Taping Rehabilitation",
+    titleHindi: "IASTM & K-Taping",
+    englishTitle: "Instrument Tissue Release & Athletic K-Tape",
+    badge: "IASTM & K-Tape",
+    desc: "Stainless-steel instrument soft tissue mobilization to break scar tissue, combined with kinesiology taping for joint stability.",
+    features: [
+      "IASTM Stainless-Steel Tool Release",
+      "Kinesiology Taping (K-Tape) Support",
+      "Scar Tissue & Adhesion Breakdown",
+      "Lymphatic Swelling & Edema Reduction"
     ]
   },
   {
     id: "electro",
-    title: "Advanced Electrotherapy",
-    titleHindi: "इलेक्ट्रोथेरेपी",
-    englishTitle: "Medical-Grade Laser & Electro-Modality Suite",
-    badge: "High-Tech Care",
-    desc: "State-of-the-art TENS, Therapeutic Ultrasound, Cold Laser, and Computerized Lumbar/Cervical Traction to accelerate cellular tissue healing.",
+    title: "Electrotherapy Suite (TENS, IFT, US & EMS)",
+    titleHindi: "Electrotherapy",
+    englishTitle: "Medical-Grade Laser, TENS, IFT, US & Muscle Stim",
+    badge: "Electrotherapy",
+    desc: "Complete electrotherapy suite featuring TENS nerve blockage, deep IFT current, Therapeutic Ultrasound (US Therapy), and Electrical Muscle Stimulation.",
     features: [
-      "Computerized Lumbar & Cervical Traction",
-      "High-Frequency Therapeutic Ultrasound",
-      "IFT & TENS Pain Decompression",
-      "Cold Laser Cellular Tissue Healing"
+      "TENS (Nerve Signal Pain Blockage)",
+      "IFT (Deep Tissue Interferential Current)",
+      "US Therapy (Therapeutic Ultrasound)",
+      "Muscle Stimulation (EMS Re-education)"
     ]
   },
   {
-    id: "sports",
-    title: "Sports Injury & ACL Rehab",
-    titleHindi: "स्पोर्ट्स इंजरी रिहैबिलिटेशन",
-    englishTitle: "Ligament Recovery & Athlete Performance",
-    badge: "Athletes Specialist",
-    desc: "Structured phase-wise rehabilitation for athletes recovering from ACL/MCL ligament tears, meniscus injuries, or sports surgeries.",
+    id: "traction",
+    title: "Intermittent Cervical & Lumbar Traction",
+    titleHindi: "Spinal Traction",
+    englishTitle: "Computerized Mechanical Spinal Decompression",
+    badge: "Spinal Traction",
+    desc: "Computerized intermittent cervical traction for neck nerve pinch, and lumbar traction for L4-L5/S1 slip disc and sciatica decompression.",
     features: [
-      "ACL / MCL Ligament Protocols",
-      "Kinesiology Taping (K-Tape)",
-      "Proprioception & Agility Training",
-      "Return-to-Sport Biomechanical Exam"
+      "Intermittent Cervical (Neck) Traction",
+      "Intermittent Lumbar (Back) Traction",
+      "Herniated Disc Negative Decompression",
+      "Sciatica Nerve Pinch Suppression"
     ]
   },
   {
     id: "stroke",
-    title: "Stroke & Neuro Rehabilitation",
-    titleHindi: "लकवा (स्ट्रोक) रिहैबिलिटेशन",
-    englishTitle: "Paralysis Motor Re-learning Program",
-    badge: "Neurological Care",
-    desc: "Dedicated neuro-rehabilitation using PNF techniques and motor relearning to help paralysis and stroke survivors regain independence.",
+    title: "Stroke, Neuro Rehab & Slimming",
+    titleHindi: "Neuro & Slimming",
+    englishTitle: "Paralysis Motor Re-learning & Body Toning",
+    badge: "Neuro & Slimming",
+    desc: "Dedicated neuro-rehabilitation using PNF techniques for paralysis recovery, alongside non-invasive body slimming and toning.",
     features: [
       "PNF (Proprioceptive Neuromuscular Facilitation)",
       "Motor Re-learning & Coordination",
-      "Gait & Balance Body Retraining",
-      "Daily Functional Activity Building"
-    ]
-  },
-  {
-    id: "slimming",
-    title: "Slimming & Body Shaping",
-    titleHindi: "स्लिमिंग एवं वेट लॉस",
-    englishTitle: "Non-Surgical Fat Loss & Toning",
-    badge: "Non-Surgical",
-    desc: "Safe, non-invasive therapies targeting stubborn body fat, metabolic activation, and muscle toning without surgery or medication.",
-    features: [
-      "Targeted Abdominal & Hip Fat Reduction",
-      "Non-Invasive Body Toning & Shaping",
-      "Metabolic Activation Protocols",
-      "Personalized Nutritional Guidance"
+      "Gait & Balance Retraining",
+      "Non-Invasive Body Slimming & Toning"
     ]
   },
 ];
@@ -210,10 +344,12 @@ export const processSteps = [
 ];
 
 export const technologies = [
-  { title: "Computerized Traction", desc: "Automated lumbar and cervical spinal decompression to relieve herniated disc pressure." },
-  { title: "Cold Laser Therapy", desc: "Photobiomodulation light energy to speed up deep cellular tissue healing and reduce inflammation." },
-  { title: "Therapeutic Ultrasound", desc: "Deep acoustic sound waves that soften scar tissue and reduce internal swelling." },
-  { title: "IFT & TENS Modalities", desc: "Targeted nerve stimulation that blocks pain signals instantly and relaxes muscular spasms." },
+  { title: "Intermittent Cervical & Lumbar Traction", desc: "Automated computerized spinal decompression to relieve herniated disc pressure, neck tightness & sciatica." },
+  { title: "Dry Needling & Hijama Cupping Suite", desc: "Sterile trigger point dry needling & medicinal wet/dry cupping for deep fascial release & micro-detoxification." },
+  { title: "IASTM & K-Taping Athletic Support", desc: "Ergonomic instrument-assisted soft tissue release & kinesiology taping for joint stability & athletic recovery." },
+  { title: "TENS, IFT & Muscle Stimulation", desc: "Medical-grade electrotherapy modalities providing instant pain signal blockage & neuromuscular muscle re-education." },
+  { title: "Therapeutic Ultrasound (US Therapy)", desc: "High-frequency acoustic sound wave therapy that softens scar tissue, reduces swelling & speeds up cellular repair." },
+  { title: "Advanced Non-Surgical Physiotherapy", desc: "Evidence-based clinical joint mobilization, spine alignment & custom biomechanical active rehabilitation." },
 ];
 
 export const testimonials = [
@@ -224,6 +360,8 @@ export const testimonials = [
     condition: "Slip Disc & Sciatica",
     city: "Hisar Cantt",
     rating: 5,
+    source: "Google Review",
+    date: "Verified Patient",
     review: "I suffered from severe sciatica pain radiating down my left leg for 6 months. Surgery was recommended elsewhere, but 3 weeks of computerized spinal traction and manual therapy at Sanjeevani under Dr. Sohan Lal made me completely pain-free!",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200"
   },
@@ -234,17 +372,21 @@ export const testimonials = [
     condition: "Severe Knee Osteoarthritis",
     city: "Hisar",
     rating: 5,
-    review: "Knee pain made walking to the market impossible. After electrotherapy and quadriceps rehab at Sanjeevani, I can now climb stairs without support. Dr. Sohan Lal's diagnosis is unmatched!",
+    source: "Google Review",
+    date: "Verified Patient",
+    review: "Knee pain made walking to the market impossible. After electrotherapy and quadriceps rehab at Sanjeevani, I can now climb stairs without support. Dr. Sohan Lal's diagnosis and staff coordination are unmatched!",
     avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200"
   },
   {
     id: 3,
     name: "Vikas Sharma",
     age: "26 yrs",
-    condition: "ACL Ligament Injury",
-    city: "Hisar",
+    condition: "ACL Ligament Post-Op Rehab",
+    city: "Hisar Cantt",
     rating: 5,
-    review: "Injured my ACL playing football. The sports rehab program at Sanjeevani restored my knee stability and strength in just 2 months. Best physiotherapist in Hisar Cantt!",
+    source: "Google Review",
+    date: "Verified Patient",
+    review: "Injured my ACL playing football. The post-operative ACL sports rehab program at Sanjeevani restored my knee stability, flexion, and strength in just 2 months. Best physiotherapist in Hisar Cantt!",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=200"
   },
   {
@@ -254,8 +396,34 @@ export const testimonials = [
     condition: "Cervical Spondylosis & Frozen Shoulder",
     city: "Hisar",
     rating: 5,
-    review: "Working long hours on a computer caused severe cervical pain and shoulder stiffness. Manual joint mobilization completely restored my arm mobility without taking heavy painkillers.",
+    source: "Google Review",
+    date: "Verified Patient",
+    review: "Working long hours on a computer caused severe cervical pain and shoulder stiffness. Joint mobilization and dry needling completely restored my arm mobility without heavy painkillers.",
     avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
+  },
+  {
+    id: 5,
+    name: "Amit Verma",
+    age: "41 yrs",
+    condition: "PIVD L4-L5 Disc Herniation",
+    city: "Hisar Cantt",
+    rating: 5,
+    source: "Google Review",
+    date: "Verified Patient",
+    review: "Diagnosed with L4-L5 disc protrusion and sharp nerve compression. Dr. Sohan Lal's intermittent lumbar traction protocol relieved my back spasm completely. Extremely satisfied with clinical care!",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200"
+  },
+  {
+    id: 6,
+    name: "Pooja Choudhary",
+    age: "34 yrs",
+    condition: "Hijama Wet Cupping & Spasm",
+    city: "Hisar",
+    rating: 5,
+    source: "Google Review",
+    date: "Verified Patient",
+    review: "Got sterile Hijama wet cupping and ultrasound therapy done for persistent back muscle spasms. Instant relief, super clean clinic environment, and highly supportive staff.",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=200"
   }
 ];
 

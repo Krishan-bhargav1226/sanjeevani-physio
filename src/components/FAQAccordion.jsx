@@ -62,7 +62,7 @@ export default function FAQAccordion() {
               <span>{clinic.phones[0]}</span>
             </a>
             <a
-              href={getWhatsAppInquiryUrl("नमस्ते, मुझे फिजियोथेरेपी इलाज के बारे में सवाल पूछना है।")}
+              href={getWhatsAppInquiryUrl("Hello, I would like to ask a question regarding physiotherapy treatment.")}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center space-x-2 bg-primary text-white font-semibold text-xs px-4 py-2 rounded-full"

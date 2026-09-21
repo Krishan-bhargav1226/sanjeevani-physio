@@ -12,26 +12,26 @@ export function buildAppointmentMessage({ name, phone, condition, service, date,
         month: "short",
         day: "numeric",
       })
-    : "As soon as possible (यथाशीघ्र)";
+    : "As Soon As Possible (ASAP)";
   const timeSlot = time || "Morning (10 AM - 12 PM)";
   const userNotes = notes && notes.trim() ? notes.trim() : "None";
 
   return `🏥 *${clinic.name} ${clinic.tagline}*
-📋 *नया अपॉइंटमेंट अनुरोध (New Appointment Request)*
+📋 *New Appointment Request*
 
-👤 *मरीज़ का नाम (Patient Name):* ${name.trim()}
-📞 *मोबाइल नंबर (Mobile):* ${phone.trim()}
-🩺 *तकलीफ़ / सेवा (Condition):* ${selectedCondition}
-📅 *पसंद की तारीख (Preferred Date):* ${formattedDate}
-⏰ *समय स्लॉट (Time Slot):* ${timeSlot}
-📝 *तकलीफ़ विवरण (Notes):* ${userNotes}
+👤 *Patient Name:* ${name.trim()}
+📞 *Mobile Number:* ${phone.trim()}
+🩺 *Condition / Specialty:* ${selectedCondition}
+📅 *Preferred Date:* ${formattedDate}
+⏰ *Time Slot:* ${timeSlot}
+📝 *Symptom Details / Notes:* ${userNotes}
 
 ---
-👨‍⚕️ *मुख्य चिकित्सक:* ${clinic.doctor} (${clinic.doctorCreds})
-📍 *पता:* ${clinic.address}
-📞 *हेल्पलाइन:* ${clinic.phones.join(" / ")}
+👨‍⚕️ *Chief Specialist:* ${clinic.doctorEnglish} (${clinic.doctorCreds})
+📍 *Address:* ${clinic.address}
+📞 *Helpline:* ${clinic.phones.join(" / ")}
 
-_कृपया मेरा अपॉइंटमेंट स्लॉट कन्फर्म करें। धन्यवाद!_`;
+_Please confirm my appointment slot. Thank you!_`;
 }
 
 /**
@@ -49,7 +49,7 @@ export function getWhatsAppBookingUrl(formData) {
 export function getWhatsAppInquiryUrl(customText) {
   const text =
     customText ||
-    `नमस्ते ${clinic.doctor}, मैं संजीवनी फिजियोथेरेपी सेंटर से परामर्श व अपॉइंटमेंट के संबंध में जानकारी चाहता/चाहती हूं।`;
+    `Hello ${clinic.doctorEnglish}, I would like to inquire about consultation and appointment booking at Sanjeevani Physiotherapy Centre.`;
   const phoneNumber = clinic.whatsapp || `91${clinic.phones[0]}`;
   return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
 }

@@ -13,7 +13,7 @@ export default function Contact() {
       />
 
       {/* Header Banner */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3 sm:mb-4">
         <div className="bg-darkSection text-white rounded-3xl p-8 sm:p-12 border-2 border-white/20 shadow-2xl relative overflow-hidden">
           <div className="max-w-3xl space-y-3 relative z-10">
             <div className="inline-flex items-center space-x-2 bg-white/10 text-emerald-400 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
@@ -31,7 +31,7 @@ export default function Contact() {
       </section>
 
       {/* Booking Form Section */}
-      <BookingSection />
+      <BookingSection className="pt-2 sm:pt-4 pb-12 sm:pb-16" />
 
       {/* FAQ Accordion */}
       <FAQAccordion />

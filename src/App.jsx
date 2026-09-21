@@ -11,6 +11,7 @@ import Reviews from "./pages/Reviews";
 import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import Gallery from "./pages/Gallery";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="blog" element={<Blog />} />
             <Route path="gallery" element={<Gallery />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Router>
