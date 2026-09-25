@@ -78,7 +78,7 @@ export default function BookingSection({ className = "" }) {
                     <Clock className="w-5 h-5 text-secondary flex-shrink-0" />
                     <div>
                       <p className="text-[11px] text-slate-300 font-bold uppercase tracking-wider">Clinic Working Hours</p>
-                      <p className="text-xs font-bold text-white">Mon - Sat: 9:00 AM – 8:00 PM</p>
+                      <p className="text-xs font-bold text-white">Mon - Sun: 9:00 AM – 8:00 PM <span className="text-emerald-400 font-bold ml-1">(Sunday Also Open)</span></p>
                     </div>
                   </div>
 

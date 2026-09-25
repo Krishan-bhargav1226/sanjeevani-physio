@@ -58,17 +58,23 @@ export default function LuxuryTestimonials() {
               </div>
 
               <div className="flex items-center space-x-3.5 pt-4 border-t border-slate-200/60">
-                <img
-                  src={item.avatar}
-                  alt={item.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-11 h-11 rounded-full object-cover border-2 border-primary flex-shrink-0"
-                />
+                <div className="relative flex-shrink-0">
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-darkSection to-primary text-white font-extrabold text-sm flex items-center justify-center shadow-md border-2 border-white">
+                    {item.initials || item.name.charAt(0)}
+                  </div>
+                  <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center p-0.5">
+                    <svg className="w-3 h-3 text-emerald-600" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                  </div>
+                </div>
                 <div className="min-w-0">
-                  <h4 className="font-bold text-textMain text-sm font-display truncate">{item.name}</h4>
+                  <div className="flex items-center space-x-2">
+                    <h4 className="font-extrabold text-textMain text-sm font-display truncate">{item.name}</h4>
+                    {item.date && <span className="text-[10px] text-slate-400 font-semibold truncate">• {item.date}</span>}
+                  </div>
                   <p className="text-xs text-muted truncate">
-                    <span className="font-semibold text-primary">{item.condition}</span> • {item.city}
+                    <span className="font-bold text-primary">{item.condition}</span> • {item.city}
                   </p>
                 </div>
               </div>

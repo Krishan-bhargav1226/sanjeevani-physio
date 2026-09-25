@@ -51,7 +51,7 @@ export default function SwissFooter() {
             <div className="space-y-2 text-xs text-slate-300">
               <p>{clinic.address}</p>
               <p className="font-semibold text-white">Helplines: {clinic.phones[0]} / {clinic.phones[1]}</p>
-              <p className="text-slate-400">Clinic Hours: Mon - Sat (9:00 AM - 8:00 PM)</p>
+              <p className="text-slate-400">Clinic Hours: Mon - Sun (9:00 AM - 8:00 PM) <span className="text-emerald-400 font-bold ml-1">(Sunday Also Open)</span></p>
             </div>
             
             <div className="pt-2">

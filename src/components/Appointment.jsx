@@ -86,7 +86,7 @@ export default function Appointment() {
               </div>
               <div>
                 <p className="font-medium text-ink">Clinic Hours</p>
-                <p className="text-sm text-muted">Monday – Saturday: 9:00 AM – 8:00 PM</p>
+                <p className="text-sm text-muted">Monday – Sunday: 9:00 AM – 8:00 PM <span className="text-emerald-600 font-semibold">(Sunday Also Open)</span></p>
               </div>
             </div>
           </div>

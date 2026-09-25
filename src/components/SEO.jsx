@@ -38,7 +38,8 @@ export default function SEO({ title, description, keywords }) {
           "Wednesday",
           "Thursday",
           "Friday",
-          "Saturday"
+          "Saturday",
+          "Sunday"
         ],
         "opens": "09:00",
         "closes": "20:00"
