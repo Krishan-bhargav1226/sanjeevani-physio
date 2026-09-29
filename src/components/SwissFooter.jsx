@@ -1,6 +1,6 @@
 import React from "react";
 import { clinic } from "../data/content";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Bot } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function SwissFooter() {
@@ -54,24 +54,37 @@ export default function SwissFooter() {
               <p className="text-slate-400">Clinic Hours: Mon - Sun (9:00 AM - 8:00 PM) <span className="text-emerald-400 font-bold ml-1">(Sunday Also Open)</span></p>
             </div>
             
-            <div className="pt-2">
+            <div className="pt-2 space-y-3">
               <a
                 href={clinic.mapUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center space-x-1.5 text-xs font-extrabold text-emerald-400 hover:text-white bg-white/10 px-3.5 py-2 rounded-xl border border-white/15 transition-all"
+                className="inline-flex items-center space-x-1.5 text-xs font-extrabold text-emerald-400 hover:text-white bg-white/10 px-3.5 py-2 rounded-xl border border-white/15 transition-all w-full justify-center"
               >
                 <span>Get Directions on Google Maps</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+
+              <a
+                href="/llms.txt"
+                target="_blank"
+                className="inline-flex items-center justify-center space-x-1.5 text-[10px] font-bold text-slate-400 hover:text-emerald-400 bg-white/5 px-3 py-1.5 rounded-xl border border-white/10 transition-all w-full"
+                title="AI Search Engine (GEO) Knowledge Base"
+              >
+                <Bot className="w-3.5 h-3.5" />
+                <span>AI Search Knowledge Base</span>
               </a>
             </div>
           </div>
 
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 space-y-2 sm:space-y-0">
+        <div className="pt-8 mt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 space-y-2 sm:space-y-0">
           <p>© {new Date().getFullYear()} SANJEEVANI PHYSIOTHERAPY & SLIMMING CENTRE. All Rights Reserved.</p>
-          <p>Hisar Cantt, Haryana 125006</p>
+          <div className="flex space-x-4">
+            <a href="/sitemap.xml" className="hover:text-emerald-400 transition-colors">Sitemap</a>
+            <p>Hisar Cantt, Haryana 125006</p>
+          </div>
         </div>
 
       </div>

@@ -1,69 +1,87 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
-export default function SEO({ title, description, keywords }) {
+export default function SEO({ title, description, keywords, canonicalUrl }) {
   const siteTitle = "Sanjeevani Physiotherapy & Slimming Centre | Best Physiotherapist in Hisar";
   const defaultDesc = "Best Physiotherapist in Hisar Cantt, Haryana under Dr. Sohan Lal (BPT, MPTh Sports, CMT). Non-surgical treatment for Slip Disc, Sciatica, Knee Pain, Cervical, Frozen Shoulder & Paralysis Rehab.";
-  const defaultKeywords = "Best Physiotherapist in Hisar, Physiotherapy Centre Hisar Cantt, Dr Sohan Lal Physiotherapy, Slip Disc Treatment Hisar, Sciatica Specialist Hisar, Knee Pain Doctor Hisar, Cervical Spondylosis Care Hisar, Stroke Rehab Hisar, Non Surgical Spine Clinic Hisar Cantt, Physiotherapist Near Me Hisar";
+  const defaultKeywords = "Best Physiotherapist in Hisar, Physiotherapy Centre Hisar Cantt, Dr Sohan Lal Physiotherapy, Slip Disc Treatment Hisar, Sciatica Specialist Hisar, Knee Pain Doctor Hisar, Cervical Spondylosis Care Hisar, Stroke Rehab Hisar, Non Surgical Spine Clinic Hisar Cantt, Physiotherapist Near Me Hisar, Acupressure Hisar, Slimming Centre Hisar";
+  
+  const currentUrl = canonicalUrl || (typeof window !== 'undefined' ? window.location.href.split('?')[0] : "https://sanjeevaniphysio.com");
 
-  const jsonLdSchema = {
-    "@context": "https://schema.org",
-    "@type": "PhysiotherapyClinic",
-    "name": "Sanjeevani Physiotherapy & Slimming Centre",
-    "alternateName": ["Sanjeevani Physiotherapy Centre", "Sanjeevani Physio Hisar"],
-    "image": "https://sanjeevaniphysio.com/images/logo.png",
-    "url": "https://maps.app.goo.gl/DwJk4W9QqFjLYVCe6",
-    "telephone": "+919991070620",
-    "priceRange": "₹₹",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Karan Singh Market, TCP-2, Near Krishna Devi Memorial Hospital",
-      "addressLocality": "Hisar Cantt",
-      "addressRegion": "Haryana",
-      "postalCode": "125006",
-      "addressCountry": "IN"
+  const jsonLdSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "PhysiotherapyClinic",
+      "name": "Sanjeevani Physiotherapy & Slimming Centre",
+      "alternateName": ["Sanjeevani Physiotherapy Centre", "Sanjeevani Physio Hisar"],
+      "image": "https://sanjeevaniphysio.com/images/logo.png",
+      "@id": "https://sanjeevaniphysio.com/#clinic",
+      "url": "https://sanjeevaniphysio.com",
+      "telephone": "+919991070620",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Karan Singh Market, TCP-2, Near Krishna Devi Memorial Hospital",
+        "addressLocality": "Hisar Cantt",
+        "addressRegion": "Haryana",
+        "postalCode": "125006",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 29.1395,
+        "longitude": 75.6421
+      },
+      "hasMap": "https://maps.app.goo.gl/DwJk4W9QqFjLYVCe6",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "09:00",
+          "closes": "20:00"
+        }
+      ],
+      "medicalSpecialty": [
+        "Physiotherapy",
+        "SportsMedicine",
+        "Musculoskeletal",
+        "Neurological",
+        "Orthopedic"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "520"
+      },
+      "areaServed": ["Hisar Cantt", "Hisar", "Hansi", "Fatehabad", "Sirsa", "Bhiwani"]
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 29.1395,
-      "longitude": 75.6421
-    },
-    "hasMap": "https://maps.app.goo.gl/DwJk4W9QqFjLYVCe6",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "09:00",
-        "closes": "20:00"
-      }
-    ],
-    "medicalSpecialty": [
-      "Physiotherapy",
-      "SportsMedicine",
-      "Musculoskeletal",
-      "Neurological"
-    ],
-    "physician": {
+    {
+      "@context": "https://schema.org",
       "@type": "Physician",
       "name": "Dr. Sohan Lal",
       "jobTitle": "Chief Physiotherapist & Sports Rehabilitation Specialist",
       "medicalSpecialty": "Spine, Joint & Sports Biomechanics",
-      "honorificPrefix": "Dr."
+      "honorificPrefix": "Dr.",
+      "worksFor": {
+        "@id": "https://sanjeevaniphysio.com/#clinic"
+      },
+      "alumniOf": "BPT, MPTh (Sports Rehabilitation), CMT"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "520"
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${currentUrl}#webpage`,
+      "url": currentUrl,
+      "name": title ? `${title} | Sanjeevani` : siteTitle,
+      "description": description || defaultDesc,
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://sanjeevaniphysio.com/#website",
+        "url": "https://sanjeevaniphysio.com/",
+        "name": "Sanjeevani Physiotherapy"
+      }
     }
-  };
+  ];
 
   return (
     <Helmet>
@@ -71,19 +89,35 @@ export default function SEO({ title, description, keywords }) {
       <meta name="description" content={description || defaultDesc} />
       <meta name="keywords" content={keywords || defaultKeywords} />
       
+      {/* Canonical URL for SEO */}
+      <link rel="canonical" href={currentUrl} />
+
+      {/* AI Crawler & Generative Engine Optimization Meta Tags */}
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      
+      {/* Geographic / Local SEO Meta Tags */}
+      <meta name="geo.region" content="IN-HR" />
+      <meta name="geo.placename" content="Hisar" />
+      <meta name="geo.position" content="29.1395;75.6421" />
+      <meta name="ICBM" content="29.1395, 75.6421" />
+
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
+      <meta property="og:url" content={currentUrl} />
       <meta property="og:title" content={title ? `${title} | Sanjeevani` : siteTitle} />
       <meta property="og:description" content={description || defaultDesc} />
       <meta property="og:image" content="/images/logo.png" />
       
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content={currentUrl} />
       <meta property="twitter:title" content={title ? `${title} | Sanjeevani` : siteTitle} />
       <meta property="twitter:description" content={description || defaultDesc} />
       <meta property="twitter:image" content="/images/logo.png" />
 
-      {/* Structured JSON-LD Schema */}
+      {/* Structured JSON-LD Schema (Multi-Entity) */}
       <script type="application/ld+json">
         {JSON.stringify(jsonLdSchema)}
       </script>
