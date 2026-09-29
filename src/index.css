@@ -134,3 +134,26 @@
 .perspective-1000 {
   perspective: 1000px;
 }
+
+/* Custom CSS Ticker Animation */
+.ticker-wrapper {
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 40s linear infinite;
+}
+
+.ticker-wrapper:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

@@ -39,7 +39,7 @@ export default function TiltCard({ children, className = "" }) {
       onMouseLeave={handleMouseLeave}
       whileHover={{ scale: 1.02, zIndex: 10 }}
       transition={{ type: "tween", ease: "easeOut", duration: 0.2 }}
-      className={`perspective-1000 ${className}`}
+      className={`perspective-1000 h-full w-full ${className}`}
     >
       <div style={{ transform: "translateZ(30px)", transformStyle: "preserve-3d" }} className="w-full h-full">
         {children}

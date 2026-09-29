@@ -172,10 +172,11 @@ export default function SwissHero() {
 
           </motion.div>
 
-          {/* 13 Specialized Therapies Pill Strip */}
-          <motion.div variants={itemVariants} className="pt-6">
-            <div className="bg-darkSection p-4 sm:p-5 rounded-3xl border-2 border-emerald-500/30 shadow-xl space-y-3">
-              <div className="flex items-center justify-between">
+          {/* 13 Specialized Therapies Pill Strip - Clean Infinite Ticker */}
+          <motion.div variants={itemVariants} className="pt-8">
+            <div className="bg-darkSection p-4 sm:p-5 rounded-3xl border border-white/10 shadow-2xl shadow-primary/10 relative overflow-hidden flex flex-col justify-center">
+              
+              <div className="flex items-center justify-between mb-4 px-2 relative z-20">
                 <span className="text-[11px] font-extrabold uppercase tracking-widest text-emerald-400 flex items-center space-x-2">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>13 Specialized Treatments & Therapies</span>
@@ -183,18 +184,27 @@ export default function SwissHero() {
                 <span className="text-[10px] text-slate-300 font-bold hidden sm:inline">Sterile Non-Surgical Protocols</span>
               </div>
 
-              <div className="flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-none">
-                {specializedTherapies.map((th) => (
-                  <Link
-                    key={th.id}
-                    to="/treatments"
-                    className="flex items-center space-x-2 bg-white/10 hover:bg-white/20 px-3.5 py-2 rounded-2xl border border-white/15 transition-all text-white whitespace-nowrap group flex-shrink-0"
-                  >
-                    <Zap className="w-3.5 h-3.5 text-emerald-400 group-hover:scale-110 transition-transform" />
-                    <span className="text-xs font-bold">{th.title}</span>
-                  </Link>
-                ))}
+              {/* Pure CSS Ticker Wrapper */}
+              <div className="ticker-wrapper relative w-full pb-1">
+                {/* Gradient fades on left and right for seamless loop visual */}
+                <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 z-10 bg-gradient-to-r from-darkSection to-transparent pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 z-10 bg-gradient-to-l from-darkSection to-transparent pointer-events-none"></div>
+                
+                <div className="ticker-track">
+                  {/* Map the array multiple times to ensure a seamless loop */}
+                  {[...specializedTherapies, ...specializedTherapies, ...specializedTherapies].map((th, index) => (
+                    <Link
+                      key={`${th.id}-${index}`}
+                      to="/treatments"
+                      className="inline-flex items-center justify-center space-x-2 bg-white/5 hover:bg-white/10 px-4 py-2 sm:py-2.5 rounded-full border border-white/10 hover:border-emerald-500/50 transition-all text-white whitespace-nowrap group shadow-sm mx-1.5 sm:mx-2"
+                    >
+                      <Zap className="w-3.5 h-3.5 text-emerald-400 group-hover:scale-110 transition-transform" />
+                      <span className="text-[11px] sm:text-xs font-bold tracking-wide">{th.title}</span>
+                    </Link>
+                  ))}
+                </div>
               </div>
+
             </div>
           </motion.div>
 

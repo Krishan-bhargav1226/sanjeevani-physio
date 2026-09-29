@@ -182,7 +182,7 @@ export default function TreatmentsSection() {
             {specializedTherapies.map((therapy) => (
               <div
                 key={therapy.id}
-                className="bg-surface rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-primary/40 transition-all flex flex-col justify-between group space-y-4"
+                className="h-full bg-surface rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-xl hover:border-primary/40 transition-all flex flex-col justify-between group space-y-4"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">

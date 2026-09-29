@@ -22,6 +22,18 @@ export default function FloatingNavbar() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  // Lock body scroll when menu is open to prevent background scrolling
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [mobileMenuOpen]);
+
   // Handle scroll shrink state
   useEffect(() => {
     const handleScroll = () => {

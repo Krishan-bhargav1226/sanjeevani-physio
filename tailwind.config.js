@@ -46,6 +46,15 @@ export default {
         xl: "1280px",
         "2xl": "1536px",
       },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        }
+      },
+      animation: {
+        marquee: 'marquee 25s linear infinite',
+      }
     },
   },
   plugins: [],
