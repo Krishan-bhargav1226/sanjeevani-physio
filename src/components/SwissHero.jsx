@@ -126,8 +126,8 @@ export default function SwissHero() {
                   <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0" />
                   <span>Non-Surgical</span>
                 </motion.div>
-                <motion.div whileHover={{ y: -2 }} className="flex items-center space-x-1.5 text-xs font-black text-red-700 bg-red-50 p-3 rounded-2xl border border-red-200 shadow-sm col-span-2 sm:col-span-1">
-                  <ShieldCheck className="w-4 h-4 text-red-600 flex-shrink-0" />
+                <motion.div whileHover={{ y: -2 }} className="flex items-center space-x-1.5 text-xs font-black text-emerald-800 bg-emerald-500/10 p-3 rounded-2xl border border-emerald-500/20 shadow-sm col-span-2 sm:col-span-1">
+                  <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   <span className="truncate">Reg. HSCP/PT/2025/3714</span>
                 </motion.div>
               </div>
@@ -154,8 +154,8 @@ export default function SwissHero() {
                     <h4 className="font-black text-textMain text-base font-display">{clinic.doctor}</h4>
                     <p className="text-xs text-primary font-bold">{clinic.doctorCreds}</p>
                     <p className="text-xs text-secondary font-extrabold">{clinic.doctorRole}</p>
-                    <div className="mt-1.5 inline-flex items-center space-x-1.5 bg-red-50 text-red-700 px-2.5 py-0.5 rounded-full text-[10px] font-black border border-red-200 shadow-sm">
-                      <ShieldCheck className="w-3 h-3 text-red-600" />
+                    <div className="mt-1.5 inline-flex items-center space-x-1.5 bg-emerald-500/10 text-emerald-800 px-2.5 py-0.5 rounded-full text-[10px] font-black border border-emerald-500/25 shadow-sm">
+                      <ShieldCheck className="w-3 h-3 text-emerald-600" />
                       <span>Reg No. HSCP/PT/2025/3714</span>
                     </div>
                   </div>
@@ -234,7 +234,8 @@ export default function SwissHero() {
               <div>
                 <h4 className="font-extrabold text-xs sm:text-base text-white font-display">Sanjeevani Physiotherapy Centre</h4>
                 <div className="flex flex-wrap items-center gap-1.5 mt-0.5">
-                  <span className="bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full shadow-sm">
+                  <span className="bg-emerald-500/20 text-emerald-300 text-[10px] font-black px-2.5 py-0.5 rounded-full border border-emerald-500/30 shadow-sm inline-flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
                     Reg. No. HSCP/PT/2025/3714
                   </span>
                   <p className="text-[11px] sm:text-xs text-slate-200 font-medium">{clinic.address}</p>

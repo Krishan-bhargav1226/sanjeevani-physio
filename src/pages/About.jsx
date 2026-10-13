@@ -36,8 +36,8 @@ export default function About() {
               </p>
 
               <div className="pt-2 flex flex-wrap gap-3 text-xs font-bold text-slate-200 items-center">
-                <span className="inline-flex items-center bg-red-600 text-white px-3 py-1 rounded-full border border-red-400 text-[11px] font-black shadow-sm">
-                  <ShieldCheck className="w-3.5 h-3.5 mr-1.5" /> Reg No: HSCP/PT/2025/3714
+                <span className="inline-flex items-center bg-emerald-500/15 text-emerald-300 px-3 py-1 rounded-full border border-emerald-500/30 text-[11px] font-black shadow-sm">
+                  <ShieldCheck className="w-3.5 h-3.5 mr-1.5 text-emerald-400" /> Reg No: HSCP/PT/2025/3714
                 </span>
                 <span className="flex items-center"><CheckCircle2 className="w-4 h-4 text-secondary mr-1.5" /> 8+ Yrs Clinical Experience</span>
                 <span className="flex items-center"><CheckCircle2 className="w-4 h-4 text-secondary mr-1.5" /> 5000+ Recovered Patients</span>

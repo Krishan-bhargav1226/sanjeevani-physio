@@ -29,9 +29,9 @@ export default function DoctorPhilosophy() {
                     <h4 className="font-black text-white text-base font-display">{clinic.doctor} ({clinic.doctorRole})</h4>
                     <p className="text-xs text-emerald-400 font-extrabold">{clinic.doctorCreds}</p>
                     <p className="text-[11px] text-slate-300 font-medium">Chief Physiotherapist & Sports Rehab Specialist</p>
-                    <div className="mt-1.5 inline-flex items-center space-x-1.5 bg-red-600 text-white px-2.5 py-0.5 rounded-full text-[10px] font-black tracking-wide border border-red-400 shadow-sm">
-                      <ShieldCheck className="w-3 h-3 text-white" />
-                      <span>Registration No. HSCP/PT/2025/3714</span>
+                    <div className="mt-2 inline-flex items-center space-x-1.5 bg-emerald-500/15 text-emerald-300 px-3 py-1 rounded-full text-[10px] font-black tracking-wide border border-emerald-500/30 shadow-sm backdrop-blur-sm">
+                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Reg. No. HSCP/PT/2025/3714</span>
                     </div>
                   </div>
                 </div>
@@ -53,19 +53,27 @@ export default function DoctorPhilosophy() {
               With over 8 years of clinical practice, Dr. Sohan Lal evaluates spine and joint mechanics directly to correct structural causes of pain and restore daily movement.
             </p>
 
-            {/* Official Registration Banner */}
-            <div className="bg-red-950/60 border border-red-500/40 p-4 rounded-2xl flex items-center space-x-3.5 shadow-lg">
-              <div className="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center flex-shrink-0 shadow-md">
-                <ShieldCheck className="w-5 h-5 text-white" />
-              </div>
-              <div className="min-w-0">
-                <div className="flex items-center space-x-2">
-                  <span className="text-xs font-black text-white uppercase tracking-wider">Haryana State Council for Physiotherapy</span>
-                  <span className="bg-red-600 text-white text-[9px] font-black px-2 py-0.5 rounded-full">OFFICIAL</span>
+            {/* Official Registration Banner - Premium Doppelrand Medical Seal */}
+            <div className="relative p-1 rounded-2xl bg-gradient-to-r from-emerald-500/30 via-secondary/20 to-emerald-500/30 border border-emerald-500/30 shadow-xl shadow-emerald-950/30 group">
+              <div className="bg-darkSection/95 backdrop-blur-xl p-3.5 sm:p-4 rounded-[14px] flex items-center justify-between gap-3 border border-white/5">
+                <div className="flex items-center space-x-3.5 min-w-0">
+                  <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-white flex items-center justify-center flex-shrink-0 shadow-lg shadow-emerald-500/25 border border-emerald-300/30 group-hover:scale-105 transition-transform">
+                    <ShieldCheck className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="flex items-center space-x-2 flex-wrap gap-y-1">
+                      <span className="text-xs font-black text-white uppercase tracking-wider">Haryana State Council for Physiotherapy</span>
+                      <span className="inline-flex items-center space-x-1 bg-emerald-500/20 text-emerald-400 text-[9px] font-black px-2 py-0.5 rounded-full border border-emerald-500/30">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>GOVT VERIFIED</span>
+                      </span>
+                    </div>
+                    <p className="text-xs sm:text-sm font-extrabold text-slate-200 mt-1 font-mono tracking-wide flex items-center space-x-2 flex-wrap gap-y-1">
+                      <span className="text-slate-400 font-sans font-medium text-xs">Registration No.</span>
+                      <span className="bg-white/10 px-2 py-0.5 rounded-md border border-white/10 text-emerald-300 font-bold tracking-wider">HSCP/PT/2025/3714</span>
+                    </p>
+                  </div>
                 </div>
-                <p className="text-xs sm:text-sm font-extrabold text-red-200 mt-0.5 font-mono">
-                  Registration No. HSCP/PT/2025/3714
-                </p>
               </div>
             </div>
 
