@@ -1,7 +1,8 @@
 import React from "react";
 import TreatmentsSection from "../components/TreatmentsSection";
+import OnlineConsultationBanner from "../components/OnlineConsultationBanner";
 import SEO from "../components/SEO";
-import { technologies, clinic } from "../data/content";
+import { technologies } from "../data/content";
 import { Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -35,6 +36,9 @@ export default function Treatments() {
       {/* Main Treatments Grid */}
       <TreatmentsSection />
 
+      {/* Online Tele-Rehabilitation Banner */}
+      <OnlineConsultationBanner className="py-6 sm:py-8" />
+
       {/* Equipment & Technology Suite */}
       <section className="py-20 bg-surface border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
@@ -67,7 +71,7 @@ export default function Treatments() {
         <div className="bg-gradient-to-r from-primary to-secondary rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="space-y-2">
             <h3 className="text-2xl sm:text-3xl font-extrabold font-display">Need expert advice for your condition?</h3>
-            <p className="text-xs sm:text-sm text-white/90">Book a direct diagnostic exam with Dr. Sohan Lal ({clinic.doctorCreds}).</p>
+            <p className="text-xs sm:text-sm text-white/90">Book an in-clinic exam in Hisar or an online video consultation from home.</p>
           </div>
           <Link
             to="/contact"

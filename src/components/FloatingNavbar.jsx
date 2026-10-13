@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { clinic } from "../data/content";
-import { Menu, X, ArrowUpRight, Calendar, Phone } from "lucide-react";
+import { Menu, X, ArrowUpRight, Calendar, Phone, Video } from "lucide-react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 
 export default function FloatingNavbar() {
@@ -179,7 +179,27 @@ export default function FloatingNavbar() {
             </div>
           </div>
 
-          <div className="space-y-3 pt-6 border-t border-white/10 mt-4 mb-8">
+          <div className="space-y-3 pt-4 border-t border-white/10 mt-2 mb-6">
+            {/* Online Video Consultation Mobile Card */}
+            <div className="bg-gradient-to-r from-emerald-500/20 to-teal-500/20 border border-emerald-400/30 rounded-2xl p-3.5 flex items-center justify-between">
+              <div className="flex items-center space-x-3">
+                <div className="w-9 h-9 rounded-xl bg-emerald-500/30 text-emerald-300 flex items-center justify-center flex-shrink-0">
+                  <Video className="w-4 h-4 text-emerald-300" />
+                </div>
+                <div>
+                  <p className="text-xs font-black text-white">Online Video Consult</p>
+                  <p className="text-[10px] text-emerald-300 font-medium">Pan-India • WhatsApp / Meet</p>
+                </div>
+              </div>
+              <Link
+                to="/contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="bg-emerald-500 hover:bg-emerald-600 text-white font-black text-[11px] px-3.5 py-1.5 rounded-xl shadow-md transition-colors"
+              >
+                Book
+              </Link>
+            </div>
+
             <Link
               to="/contact"
               onClick={() => setMobileMenuOpen(false)}

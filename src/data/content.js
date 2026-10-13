@@ -22,6 +22,8 @@ export const clinic = {
   workingHours: "Monday – Sunday: 9:00 AM – 7:00 PM (Sunday Also Open)",
   registrationNo: "HSCP/PT/2025/3714",
   regAuthority: "Haryana State Council for Physiotherapy",
+  onlineConsultationAvailable: true,
+  consultationModes: "In-Clinic (Hisar Cantt) & Online Video Consultation (Pan-India)",
 };
 
 export const stats = [
@@ -213,7 +215,66 @@ export const specializedTherapies = [
   },
 ];
 
+export const onlineConsultation = {
+  title: "Online Video Consultation",
+  subtitle: "Expert 1-on-1 Physiotherapy Care From Anywhere",
+  tagline: "Consult Dr. Sohan Lal via HD Video Call (WhatsApp / Google Meet)",
+  description: "Can't visit our Hisar clinic due to distance, travel limitations, or a busy schedule? Connect directly with Dr. Sohan Lal from the comfort of your home. Get clinical evaluation of your pain, expert review of your MRI & X-ray reports, posture diagnostics, and a personalized home exercise recovery regimen.",
+  highlights: [
+    {
+      title: "1-on-1 HD Video Consultation",
+      desc: "Direct video appointment with Chief Specialist Dr. Sohan Lal for comprehensive symptom assessment.",
+      icon: "Video",
+    },
+    {
+      title: "MRI, CT & X-Ray Report Evaluation",
+      desc: "Detailed review of your imaging reports to determine non-surgical treatment suitability.",
+      icon: "FileText",
+    },
+    {
+      title: "Customized Home Exercise Plan",
+      desc: "Step-by-step therapeutic exercise routine with proper ergonomics and posture correction.",
+      icon: "Activity",
+    },
+    {
+      title: "WhatsApp Follow-Up Support",
+      desc: "Ongoing messaging support to review recovery milestones and adjust exercise progression.",
+      icon: "MessageCircle",
+    },
+  ],
+  steps: [
+    {
+      step: "01",
+      title: "Book Online Slot",
+      desc: "Select Online Video Consultation in our booking form or text us on WhatsApp.",
+    },
+    {
+      step: "02",
+      title: "Share Reports & Pain History",
+      desc: "Send your MRI/X-ray scans and symptom details on WhatsApp prior to the call.",
+    },
+    {
+      step: "03",
+      title: "1-on-1 Video Session",
+      desc: "Join an interactive video consultation with Dr. Sohan Lal for posture and mobility testing.",
+    },
+    {
+      step: "04",
+      title: "Get Rehab Plan & Follow Up",
+      desc: "Receive your tailored home exercise plan, posture guidelines, and scheduled recovery review.",
+    },
+  ],
+  suitableFor: [
+    "Outstation patients outside Hisar & across India",
+    "Working professionals with tight schedules",
+    "Elderly patients unable to travel frequently",
+    "Post-treatment follow-up & exercise correction",
+    "Second opinion on slip disc or knee surgery",
+  ],
+};
+
 export const therapyOptions = [
+  "Online Video Consultation (Remote)",
   "Advanced Physiotherapy",
   "Dry Needling Therapy",
   "Cupping Therapy (Dry)",
@@ -485,6 +546,14 @@ export const faqs = [
   {
     q: "Do I need an advance appointment before visiting?",
     a: "Advance booking via WhatsApp or telephone is highly recommended to ensure direct 1-on-1 diagnostic consultation with Dr. Sohan Lal without waiting in line."
+  },
+  {
+    q: "Can I consult Dr. Sohan Lal online if I cannot visit the Hisar clinic?",
+    a: "Yes! Dr. Sohan Lal provides 1-on-1 Online Video Consultations (via WhatsApp Video or Google Meet) for outstation patients across India, elderly individuals unable to travel, and busy professionals. You can get your MRI/X-ray reports reviewed, mobility evaluated, and receive a guided home exercise routine."
+  },
+  {
+    q: "How does an Online Video Consultation work?",
+    a: "Simply choose 'Online Video Consultation' on our appointment form or text us on WhatsApp. Share your recent scans/symptoms, pick a convenient time slot, and attend a 1-on-1 video call where Dr. Sohan Lal conducts posture analysis and designs your recovery plan."
   },
   {
     q: "What conditions are treated at Sanjeevani Centre?",

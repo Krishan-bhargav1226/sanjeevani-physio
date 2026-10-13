@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { clinic, therapyOptions } from "../data/content";
 import { getWhatsAppBookingUrl, buildAppointmentMessage } from "../utils/whatsapp";
-import { Phone, MessageCircle, MapPin, Clock, Send, CheckCircle2, Copy, ExternalLink, Check } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Clock, Send, CheckCircle2, Copy, ExternalLink, Check, Video } from "lucide-react";
 
 export default function BookingSection({ className = "" }) {
   const [form, setForm] = useState({
     name: "",
     phone: "",
+    consultationType: "In-Clinic Visit (Hisar Cantt)",
     condition: "Advanced Physiotherapy",
     date: "",
     time: "Morning (10 AM - 12 PM)",
@@ -89,6 +90,22 @@ export default function BookingSection({ className = "" }) {
                       <p className="text-xs text-white font-medium leading-normal">{clinic.addressShort}</p>
                     </div>
                   </div>
+
+                  {/* Online Consultation Card */}
+                  <div className="bg-gradient-to-r from-emerald-500/20 via-primary/20 to-teal-500/20 p-4 rounded-2xl border border-emerald-400/30 space-y-2">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[11px] text-emerald-300 font-extrabold uppercase tracking-wider flex items-center space-x-1.5">
+                        <Video className="w-3.5 h-3.5 text-emerald-400" />
+                        <span>Online Consultation Available</span>
+                      </span>
+                      <span className="bg-emerald-400/20 text-emerald-300 text-[9px] font-black px-2 py-0.5 rounded-full border border-emerald-400/30">
+                        ALL INDIA
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-200 leading-relaxed font-normal">
+                      Cannot visit Hisar? Connect with Dr. Sohan Lal via 1-on-1 HD Video Call for report review, movement assessment & customized home rehab plans.
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -151,6 +168,13 @@ export default function BookingSection({ className = "" }) {
                       <span className="font-bold text-textMain">{form.phone}</span>
                     </div>
                     <div className="flex justify-between border-b border-slate-200/60 pb-2">
+                      <span className="text-muted font-medium">Consultation Mode:</span>
+                      <span className="font-extrabold text-primary flex items-center space-x-1">
+                        {form.consultationType.includes("Online") ? <Video className="w-3.5 h-3.5 text-primary inline mr-1" /> : <MapPin className="w-3.5 h-3.5 text-secondary inline mr-1" />}
+                        {form.consultationType}
+                      </span>
+                    </div>
+                    <div className="flex justify-between border-b border-slate-200/60 pb-2">
                       <span className="text-muted font-medium">Condition / Specialty:</span>
                       <span className="font-bold text-primary">{form.condition}</span>
                     </div>
@@ -200,8 +224,53 @@ export default function BookingSection({ className = "" }) {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <h3 className="text-2xl font-bold font-display text-textMain">Book Diagnostic Consultation</h3>
-                    <p className="text-xs text-muted font-medium mt-1">Select your preferred date & symptom details.</p>
+                    <p className="text-xs text-muted font-medium mt-1">Select consultation mode & preferred time slot.</p>
                   </div>
+
+                  {/* Consultation Mode Selector */}
+                  <div className="space-y-1.5">
+                    <label className="block text-xs font-bold text-textMain">Choose Consultation Mode *</label>
+                    <div className="grid grid-cols-2 gap-2 p-1.5 bg-slate-100 rounded-2xl border-2 border-slate-200">
+                      <button
+                        type="button"
+                        onClick={() => setForm({ ...form, consultationType: "In-Clinic Visit (Hisar Cantt)" })}
+                        className={`flex items-center justify-center space-x-1.5 sm:space-x-2 py-2.5 px-2 sm:px-3 rounded-xl text-xs font-extrabold transition-all ${
+                          form.consultationType === "In-Clinic Visit (Hisar Cantt)"
+                            ? "bg-darkSection text-white shadow-md scale-[1.01]"
+                            : "text-muted hover:text-textMain hover:bg-white/60"
+                        }`}
+                      >
+                        <MapPin className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                        <span className="truncate">In-Clinic (Hisar Cantt)</span>
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => setForm({ ...form, consultationType: "Online Video Consultation" })}
+                        className={`flex items-center justify-center space-x-1.5 sm:space-x-2 py-2.5 px-2 sm:px-3 rounded-xl text-xs font-extrabold transition-all ${
+                          form.consultationType === "Online Video Consultation"
+                            ? "bg-primary text-white shadow-md scale-[1.01]"
+                            : "text-muted hover:text-textMain hover:bg-white/60"
+                        }`}
+                      >
+                        <Video className="w-3.5 h-3.5 text-emerald-300 flex-shrink-0" />
+                        <span className="truncate">Online Video Consult</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Helpful Context Note when Online Video is Chosen */}
+                  {form.consultationType === "Online Video Consultation" && (
+                    <div className="bg-emerald-500/10 border border-emerald-500/30 rounded-2xl p-3 sm:p-3.5 flex items-start space-x-3 text-xs text-emerald-950 animate-fadeIn">
+                      <Video className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
+                      <div className="space-y-0.5">
+                        <p className="font-extrabold text-emerald-900">1-on-1 Video Call with Dr. Sohan Lal</p>
+                        <p className="text-[11px] text-emerald-800 leading-relaxed font-medium">
+                          Available via WhatsApp Video or Google Meet across India. Ideal for MRI / X-ray review, posture evaluation, and guided home rehabilitation routines.
+                        </p>
+                      </div>
+                    </div>
+                  )}
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>

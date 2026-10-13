@@ -12,8 +12,8 @@ export default function SEO({
 }) {
   const location = useLocation();
   const siteTitle = "Sanjeevani Physiotherapy Centre | Best Physiotherapist in Hisar";
-  const defaultDesc = "Best Physiotherapist in Hisar Cantt, Haryana under Dr. Sohan Lal (BPT, MPTh Sports, CMT). Non-surgical treatment for Slip Disc, Sciatica, Knee Pain, Cervical, Frozen Shoulder & Paralysis Rehab.";
-  const defaultKeywords = "Best Physiotherapist in Hisar, Physiotherapy Centre Hisar Cantt, Dr Sohan Lal Physiotherapy, Slip Disc Treatment Hisar, Sciatica Specialist Hisar, Knee Pain Doctor Hisar, Cervical Spondylosis Care Hisar, Stroke Rehab Hisar, Non Surgical Spine Clinic Hisar Cantt, Physiotherapist Near Me Hisar, Acupressure Hisar";
+  const defaultDesc = "Best Physiotherapist in Hisar Cantt under Dr. Sohan Lal (BPT, MPTh Sports, CMT). In-clinic & 1-on-1 Online Video Consultation for Slip Disc, Sciatica, Knee Pain, Cervical, Frozen Shoulder & Paralysis Rehab across India.";
+  const defaultKeywords = "Best Physiotherapist in Hisar, Online Physiotherapist Consultation India, Video Consultation Physiotherapy, Physiotherapy Centre Hisar Cantt, Dr Sohan Lal Physiotherapy, Slip Disc Treatment Hisar, Sciatica Specialist Hisar, Knee Pain Doctor Hisar, Cervical Spondylosis Care Hisar, Stroke Rehab Hisar, Non Surgical Spine Clinic Hisar Cantt, Tele Physiotherapy India";
 
   // Build clean absolute canonical URL
   const pathname = location?.pathname || "";

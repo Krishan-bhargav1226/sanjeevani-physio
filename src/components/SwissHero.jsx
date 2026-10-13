@@ -1,6 +1,6 @@
 import React from "react";
 import { clinic, specializedTherapies } from "../data/content";
-import { ArrowUpRight, CheckCircle2, Sparkles, Phone, ShieldCheck, Zap } from "lucide-react";
+import { ArrowUpRight, CheckCircle2, Sparkles, Phone, ShieldCheck, Zap, Video } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -45,7 +45,7 @@ export default function SwissHero() {
           className="max-w-5xl space-y-6"
         >
           {/* Top Kicker Floating Badge */}
-          <motion.div variants={itemVariants} className="inline-block">
+          <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-2">
             <motion.div 
               whileHover={{ scale: 1.03 }}
               animate={{ y: [0, -3, 0] }}
@@ -57,6 +57,16 @@ export default function SwissHero() {
               <span className="text-white font-extrabold">{clinic.name}</span>
               <span className="text-emerald-400 font-bold hidden sm:inline">• {clinic.tagline}</span>
             </motion.div>
+
+            <motion.a
+              href="#contact"
+              whileHover={{ scale: 1.04 }}
+              className="inline-flex items-center space-x-1.5 bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-900 border border-emerald-500/30 px-3.5 py-2 rounded-full text-[11px] font-black tracking-wide shadow-sm transition-all"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <Video className="w-3.5 h-3.5 text-emerald-700" />
+              <span>Online Video Consult Available</span>
+            </motion.a>
           </motion.div>
 
           {/* Main Display Headline */}

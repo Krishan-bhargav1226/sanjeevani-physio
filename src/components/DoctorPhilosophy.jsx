@@ -1,6 +1,6 @@
 import React from "react";
 import { clinic } from "../data/content";
-import { Award, GraduationCap, HeartPulse, ShieldCheck, ArrowUpRight } from "lucide-react";
+import { Award, GraduationCap, HeartPulse, ShieldCheck, ArrowUpRight, Video } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function DoctorPhilosophy() {
@@ -106,20 +106,27 @@ export default function DoctorPhilosophy() {
               <div className="glass-pill p-4 rounded-2xl border border-white/10 flex items-start space-x-3">
                 <ShieldCheck className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-xs font-bold text-white">1-on-1 Personalized Care</h4>
-                  <p className="text-[11px] text-slate-300">Direct Doctor Consultation</p>
+                  <h4 className="text-xs font-bold text-white">In-Clinic & Online Video Care</h4>
+                  <p className="text-[11px] text-slate-300">Direct 1-on-1 Doctor Consultation</p>
                 </div>
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className="pt-2">
+            {/* CTA Buttons */}
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <Link
                 to="/contact"
                 className="inline-flex items-center space-x-2 bg-primary hover:bg-primary-hover text-white font-bold text-xs px-7 py-3.5 rounded-full shadow-lg transition-all"
               >
                 <span>Consult Dr. Sohan Lal</span>
                 <ArrowUpRight className="w-4 h-4 text-softAccent" />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-bold text-xs px-6 py-3.5 rounded-full border border-white/20 transition-all"
+              >
+                <Video className="w-4 h-4 text-emerald-400" />
+                <span>Online Video Consult</span>
               </Link>
             </div>
 

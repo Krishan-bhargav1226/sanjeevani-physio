@@ -3,8 +3,9 @@ import { clinic } from "../data/content";
 /**
  * Generates a clean, professional, bilingual (Hindi/English) formatted WhatsApp message for appointment booking.
  */
-export function buildAppointmentMessage({ name, phone, condition, service, date, time, notes }) {
+export function buildAppointmentMessage({ name, phone, condition, service, consultationType, date, time, notes }) {
   const selectedCondition = condition || service || "General Physiotherapy Consultation";
+  const consultMode = consultationType || "In-Clinic Visit (Hisar Cantt)";
   const formattedDate = date
     ? new Date(date).toLocaleDateString("en-IN", {
         weekday: "short",
@@ -21,6 +22,7 @@ export function buildAppointmentMessage({ name, phone, condition, service, date,
 
 👤 *Patient Name:* ${name.trim()}
 📞 *Mobile Number:* ${phone.trim()}
+🌐 *Consultation Mode:* ${consultMode}
 🩺 *Condition / Specialty:* ${selectedCondition}
 📅 *Preferred Date:* ${formattedDate}
 ⏰ *Time Slot:* ${timeSlot}
@@ -28,10 +30,10 @@ export function buildAppointmentMessage({ name, phone, condition, service, date,
 
 ---
 👨‍⚕️ *Chief Specialist:* ${clinic.doctorEnglish} (${clinic.doctorCreds})
-📍 *Address:* ${clinic.address}
+📍 *Clinic Address:* ${clinic.address}
 📞 *Helpline:* ${clinic.phones.join(" / ")}
 
-_Please confirm my appointment slot. Thank you!_`;
+_Please confirm my consultation slot. Thank you!_`;
 }
 
 /**
@@ -53,3 +55,15 @@ export function getWhatsAppInquiryUrl(customText) {
   const phoneNumber = clinic.whatsapp || `91${clinic.phones[0]}`;
   return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
 }
+
+/**
+ * Returns a wa.me URL specifically for Online Video Consultation inquiry.
+ */
+export function getWhatsAppOnlineConsultUrl(customText) {
+  const text =
+    customText ||
+    `Hello Dr. Sohan Lal, I would like to book an *Online Video Consultation* for physiotherapy. Please share the available time slots and procedure.`;
+  const phoneNumber = clinic.whatsapp || `91${clinic.phones[0]}`;
+  return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+}
+

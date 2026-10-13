@@ -41,7 +41,7 @@ export default function SwissFooter() {
               <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link to="/treatments" className="hover:text-white transition-colors">Clinical Specialties</Link></li>
               <li><Link to="/about" className="hover:text-white transition-colors">Dr. Sohan Lal Profile</Link></li>
-              <li><Link to="/about" className="hover:text-white transition-colors">Recovery Method</Link></li>
+              <li><Link to="/contact" className="hover:text-white transition-colors text-emerald-400 font-bold">Online Video Consultation</Link></li>
               <li><Link to="/reviews" className="hover:text-white transition-colors">Patient Stories</Link></li>
               <li><Link to="/contact" className="hover:text-white transition-colors">Book Appointment</Link></li>
             </ul>
@@ -53,6 +53,10 @@ export default function SwissFooter() {
               <p>{clinic.address}</p>
               <p className="font-semibold text-white">Helplines: {clinic.phones[0]} / {clinic.phones[1]}</p>
               <p className="text-slate-400">Clinic Hours: Mon - Sun (9:00 AM - 7:00 PM) <span className="text-emerald-400 font-bold ml-1">(Sunday Also Open)</span></p>
+              <p className="text-emerald-400 font-bold flex items-center space-x-1.5 pt-0.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Online Video Consultations: Available Pan-India</span>
+              </p>
             </div>
             
             <div className="pt-2">

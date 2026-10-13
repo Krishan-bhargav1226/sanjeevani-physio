@@ -2,14 +2,14 @@ import React from "react";
 import BookingSection from "../components/BookingSection";
 import FAQAccordion from "../components/FAQAccordion";
 import SEO from "../components/SEO";
-import { Calendar } from "lucide-react";
+import { Calendar, Video } from "lucide-react";
 
 export default function Contact() {
   return (
     <div className="animate-fadeIn pt-28 md:pt-36 bg-bg min-h-screen">
       <SEO 
-        title="Book Appointment & Contact Clinic" 
-        description="Book direct consultation with Dr. Sohan Lal at Sanjeevani Physiotherapy Centre Hisar Cantt. Call 9991070620." 
+        title="Book Appointment & Online Consultation" 
+        description="Book direct in-clinic consultation or 1-on-1 Online Video Consultation with Dr. Sohan Lal at Sanjeevani Physiotherapy Centre. Call 9991070620." 
         pageType="ContactPage"
       />
 
@@ -17,15 +17,21 @@ export default function Contact() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3 sm:mb-4">
         <div className="bg-darkSection text-white rounded-3xl p-8 sm:p-12 border-2 border-white/20 shadow-2xl relative overflow-hidden">
           <div className="max-w-3xl space-y-3 relative z-10">
-            <div className="inline-flex items-center space-x-2 bg-white/10 text-emerald-400 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
-              <Calendar className="w-3.5 h-3.5 text-secondary" />
-              <span>Direct Clinic Consultation</span>
+            <div className="flex flex-wrap gap-2">
+              <div className="inline-flex items-center space-x-2 bg-white/10 text-emerald-400 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
+                <Calendar className="w-3.5 h-3.5 text-secondary" />
+                <span>In-Clinic Visit (Hisar Cantt)</span>
+              </div>
+              <div className="inline-flex items-center space-x-2 bg-emerald-500/20 text-emerald-300 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase border border-emerald-400/30">
+                <Video className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Online Video Consult (All India)</span>
+              </div>
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white font-display tracking-tight">
-              Book Your Diagnostic Exam
+              Book Your Diagnostic Consultation
             </h1>
             <p className="text-sm sm:text-base text-slate-300 font-medium">
-              Visit our clinic in Hisar Cantt or confirm your time slot instantly via WhatsApp.
+              Visit our clinic in Hisar Cantt or connect directly with Dr. Sohan Lal via 1-on-1 Online Video Consultation from anywhere. Fast confirmation via WhatsApp.
             </p>
           </div>
         </div>

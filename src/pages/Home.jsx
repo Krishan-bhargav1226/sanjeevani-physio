@@ -7,6 +7,7 @@ import WellnessJourney from "../components/WellnessJourney";
 import BookingSection from "../components/BookingSection";
 import LuxuryTestimonials from "../components/LuxuryTestimonials";
 import FAQAccordion from "../components/FAQAccordion";
+import OnlineConsultationBanner from "../components/OnlineConsultationBanner";
 import SEO from "../components/SEO";
 import { painConditions } from "../data/content";
 import { Link } from "react-router-dom";
@@ -132,18 +133,23 @@ export default function Home() {
         <TreatmentsSection />
       </div>
 
-      {/* 7. 4-Step Recovery Process */}
+      {/* 7. Dedicated Online Tele-Rehabilitation Banner */}
       <div className="order-7 md:order-6">
+        <OnlineConsultationBanner />
+      </div>
+
+      {/* 8. 4-Step Recovery Process */}
+      <div className="order-8 md:order-7">
         <WellnessJourney />
       </div>
 
-      {/* 8. Verified Patient Outcome Testimonials */}
-      <div className="order-8 md:order-7">
+      {/* 9. Verified Patient Outcome Testimonials */}
+      <div className="order-9 md:order-8">
         <LuxuryTestimonials />
       </div>
 
-      {/* 9. Frequently Asked Questions */}
-      <div className="order-9 md:order-8">
+      {/* 10. Frequently Asked Questions */}
+      <div className="order-10 md:order-9">
         <FAQAccordion />
       </div>
 

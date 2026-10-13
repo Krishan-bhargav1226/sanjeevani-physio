@@ -41,7 +41,7 @@ export default function FloatingActions() {
       >
         <MessageCircle className="w-6 h-6" />
         <span className="absolute right-full mr-3 bg-darkSection text-white text-xs font-bold px-3 py-1.5 rounded-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-md pointer-events-none hidden sm:inline-block">
-          WhatsApp Chat ({clinic.phones[0]})
+          WhatsApp & Online Video Consult ({clinic.phones[0]})
         </span>
       </a>
 
