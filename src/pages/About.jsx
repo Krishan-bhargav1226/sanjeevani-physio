@@ -12,6 +12,7 @@ export default function About() {
       <SEO 
         title="Dr. Sohan Lal Profile & Clinical Background" 
         description="Learn about Dr. Sohan Lal (BPT, MPTh Sports, CMT) - Chief Physiotherapist with 8+ years experience in non-surgical joint & spine care in Hisar." 
+        pageType="AboutPage"
       />
 
       {/* Hero Header */}
@@ -34,7 +35,10 @@ export default function About() {
                 {doctorBio.aboutText}
               </p>
 
-              <div className="pt-2 flex flex-wrap gap-4 text-xs font-bold text-slate-200">
+              <div className="pt-2 flex flex-wrap gap-3 text-xs font-bold text-slate-200 items-center">
+                <span className="inline-flex items-center bg-red-600 text-white px-3 py-1 rounded-full border border-red-400 text-[11px] font-black shadow-sm">
+                  <ShieldCheck className="w-3.5 h-3.5 mr-1.5" /> Reg No: HSCP/PT/2025/3714
+                </span>
                 <span className="flex items-center"><CheckCircle2 className="w-4 h-4 text-secondary mr-1.5" /> 8+ Yrs Clinical Experience</span>
                 <span className="flex items-center"><CheckCircle2 className="w-4 h-4 text-secondary mr-1.5" /> 5000+ Recovered Patients</span>
                 <span className="flex items-center"><CheckCircle2 className="w-4 h-4 text-secondary mr-1.5" /> Hisar Cantt Practice</span>
@@ -91,7 +95,7 @@ export default function About() {
         <div className="bg-darkSection text-white rounded-3xl p-8 sm:p-12 border border-white/15 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="space-y-2">
             <h3 className="text-2xl font-extrabold font-display">Schedule a diagnostic consultation with Dr. Sohan Lal</h3>
-            <p className="text-xs text-slate-300">Visit Sanjeevani Physiotherapy & Slimming Centre in Hisar Cantt.</p>
+            <p className="text-xs text-slate-300">Visit Sanjeevani Physiotherapy Centre in Hisar Cantt.</p>
           </div>
           <Link
             to="/contact"

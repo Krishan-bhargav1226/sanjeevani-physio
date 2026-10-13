@@ -9,7 +9,8 @@ export default function Contact() {
     <div className="animate-fadeIn pt-28 md:pt-36 bg-bg min-h-screen">
       <SEO 
         title="Book Appointment & Contact Clinic" 
-        description="Book direct consultation with Dr. Sohan Lal at Sanjeevani Physiotherapy & Slimming Centre Hisar Cantt. Call 9991070620." 
+        description="Book direct consultation with Dr. Sohan Lal at Sanjeevani Physiotherapy Centre Hisar Cantt. Call 9991070620." 
+        pageType="ContactPage"
       />
 
       {/* Header Banner */}

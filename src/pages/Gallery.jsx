@@ -15,7 +15,8 @@ export default function Gallery() {
     <div className="pt-28 md:pt-36 pb-24 min-h-screen bg-bg relative">
       <SEO 
         title="Sanjeevani Clinic Facilities & Infrastructure Gallery" 
-        description="Take a visual tour of Sanjeevani Physiotherapy Centre in Hisar Cantt — sanitized, comfortable, and state-of-the-art facility." 
+        description="Photos of the treatment rooms, electrotherapy equipment, and clinical facilities at Sanjeevani Physiotherapy Centre in Hisar Cantt." 
+        pageType="ImageGallery"
       />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -28,10 +29,10 @@ export default function Gallery() {
               <span>Modern Clinical Facility</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold text-white font-display tracking-tight">
-              State-of-the-Art Rehabilitation Environment
+              Clinical Facilities & Treatment Rooms
             </h1>
             <p className="text-sm sm:text-base text-slate-300 font-medium">
-              A premium, sanitized, fully equipped clinical center designed for patient comfort, safety, and swift physical recovery.
+              A clean, fully equipped clinical center designed for spine decompression, manual therapy, and active physical recovery.
             </p>
           </div>
         </div>

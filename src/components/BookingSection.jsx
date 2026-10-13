@@ -78,7 +78,7 @@ export default function BookingSection({ className = "" }) {
                     <Clock className="w-5 h-5 text-secondary flex-shrink-0" />
                     <div>
                       <p className="text-[11px] text-slate-300 font-bold uppercase tracking-wider">Clinic Working Hours</p>
-                      <p className="text-xs font-bold text-white">Mon - Sun: 9:00 AM – 8:00 PM <span className="text-emerald-400 font-bold ml-1">(Sunday Also Open)</span></p>
+                      <p className="text-xs font-bold text-white">Mon - Sun: 9:00 AM – 7:00 PM <span className="text-emerald-400 font-bold ml-1">(Sunday Also Open)</span></p>
                     </div>
                   </div>
 
@@ -95,6 +95,7 @@ export default function BookingSection({ className = "" }) {
               <div className="pt-6 border-t border-white/15">
                 <p className="text-xs text-slate-400">Chief Physiotherapist:</p>
                 <p className="text-sm font-bold text-white">{clinic.doctor} ({clinic.doctorCreds})</p>
+                <p className="text-[11px] text-emerald-400 font-bold mt-0.5">Reg. No: HSCP/PT/2025/3714 (HSCP)</p>
               </div>
 
               {/* Google Maps Embed & Direct Link */}
@@ -267,7 +268,7 @@ export default function BookingSection({ className = "" }) {
                         <option value="Morning (10 AM - 12 PM)">Morning (10 AM - 12 PM)</option>
                         <option value="Afternoon (12 PM - 2 PM)">Afternoon (12 PM - 2 PM)</option>
                         <option value="Evening (4 PM - 6 PM)">Evening (4 PM - 6 PM)</option>
-                        <option value="Late Evening (6 PM - 8 PM)">Late Evening (6 PM - 8 PM)</option>
+                        <option value="Late Evening (5 PM - 7 PM)">Late Evening (5 PM - 7 PM)</option>
                       </select>
                     </div>
                   </div>

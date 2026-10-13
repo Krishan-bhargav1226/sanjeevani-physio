@@ -1,6 +1,6 @@
 import React from "react";
 import { clinic } from "../data/content";
-import { ArrowUpRight, Bot } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function SwissFooter() {
@@ -26,11 +26,12 @@ export default function SwissFooter() {
               "{clinic.tagline}" • {clinic.subTaglineHindi}
             </p>
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-              Sanjeevani Physiotherapy & Slimming Centre is a modern, evidence-based healthcare practice in Hisar Cantt dedicated to non-surgical joint, spine & rehabilitation care under Dr. Sohan Lal.
+              Sanjeevani Physiotherapy Centre is a modern, evidence-based healthcare practice in Hisar Cantt dedicated to non-surgical joint, spine & rehabilitation care under Dr. Sohan Lal.
             </p>
             <div className="pt-2 text-xs text-slate-400">
               <p className="font-bold text-white">{clinic.doctor} ({clinic.doctorCreds}) - {clinic.doctorRole}</p>
               <p>{clinic.doctorExperience}</p>
+              <p className="text-emerald-400 font-extrabold text-[11px] mt-1">Reg. No: HSCP/PT/2025/3714 (Haryana State Council for Physiotherapy)</p>
             </div>
           </div>
 
@@ -51,10 +52,10 @@ export default function SwissFooter() {
             <div className="space-y-2 text-xs text-slate-300">
               <p>{clinic.address}</p>
               <p className="font-semibold text-white">Helplines: {clinic.phones[0]} / {clinic.phones[1]}</p>
-              <p className="text-slate-400">Clinic Hours: Mon - Sun (9:00 AM - 8:00 PM) <span className="text-emerald-400 font-bold ml-1">(Sunday Also Open)</span></p>
+              <p className="text-slate-400">Clinic Hours: Mon - Sun (9:00 AM - 7:00 PM) <span className="text-emerald-400 font-bold ml-1">(Sunday Also Open)</span></p>
             </div>
             
-            <div className="pt-2 space-y-3">
+            <div className="pt-2">
               <a
                 href={clinic.mapUrl}
                 target="_blank"
@@ -64,23 +65,13 @@ export default function SwissFooter() {
                 <span>Get Directions on Google Maps</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
-
-              <a
-                href="/llms.txt"
-                target="_blank"
-                className="inline-flex items-center justify-center space-x-1.5 text-[10px] font-bold text-slate-400 hover:text-emerald-400 bg-white/5 px-3 py-1.5 rounded-xl border border-white/10 transition-all w-full"
-                title="AI Search Engine (GEO) Knowledge Base"
-              >
-                <Bot className="w-3.5 h-3.5" />
-                <span>AI Search Knowledge Base</span>
-              </a>
             </div>
           </div>
 
         </div>
 
         <div className="pt-8 mt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 space-y-2 sm:space-y-0">
-          <p>© {new Date().getFullYear()} SANJEEVANI PHYSIOTHERAPY & SLIMMING CENTRE. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} SANJEEVANI PHYSIOTHERAPY CENTRE. All Rights Reserved.</p>
           <div className="flex space-x-4">
             <a href="/sitemap.xml" className="hover:text-emerald-400 transition-colors">Sitemap</a>
             <p>Hisar Cantt, Haryana 125006</p>

@@ -11,6 +11,7 @@ export default function Reviews() {
       <SEO 
         title="Patient Outcomes & Verified Google Reviews" 
         description="Read verified Google reviews and non-surgical recovery stories from Sanjeevani Physiotherapy Centre Hisar (Dr. Sohan Lal)." 
+        pageType="WebPage"
       />
 
       {/* Header Banner */}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { services, painConditions, specializedTherapies } from "../data/content";
-import { Zap, Activity, Dumbbell, Trophy, Brain, Flame, CheckCircle2, ArrowUpRight, X } from "lucide-react";
+import { Zap, Activity, Dumbbell, Trophy, Brain, CheckCircle2, ArrowUpRight, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import TiltCard from "./TiltCard";
@@ -17,8 +17,14 @@ export default function TreatmentsSection() {
     };
     if (selectedService) {
       window.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
     }
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
+    };
   }, [selectedService]);
 
   const getServiceIcon = (id) => {
@@ -28,7 +34,6 @@ export default function TreatmentsSection() {
       case "exercise": return <Dumbbell className="w-5 h-5 text-primary" />;
       case "sports": return <Trophy className="w-5 h-5 text-primary" />;
       case "stroke": return <Brain className="w-5 h-5 text-primary" />;
-      case "slimming": return <Flame className="w-5 h-5 text-primary" />;
       default: return <Activity className="w-5 h-5 text-primary" />;
     }
   };
@@ -50,7 +55,7 @@ export default function TreatmentsSection() {
             Evidence-based physiotherapy & specialized therapy modalities.
           </h2>
           <p className="text-base text-muted font-medium">
-            Featuring 13 specialized non-surgical therapies — Dry Needling, Hijama Cupping, IASTM, K-Taping, TENS, IFT, Ultrasound, Muscle Stim & Intermittent Spinal Traction.
+            Including 13 specialized non-surgical therapies: Dry Needling, Hijama Cupping, IASTM, K-Taping, TENS, IFT, Ultrasound, Muscle Stim, and Intermittent Spinal Traction.
           </p>
         </motion.div>
 

@@ -95,7 +95,7 @@ export const blogPosts = [
     sections: [
       {
         heading: "Neuroplasticity & Brain Recovery After Stroke",
-        body: "Following an ischemic or hemorrhagic stroke, brain tissue controlling motor movement may suffer injury. However, the human brain possesses a remarkable capacity known as neuroplasticity — the ability of healthy brain areas to form new neural connections and relearn motor skills."
+        body: "Following an ischemic or hemorrhagic stroke, brain tissue controlling motor movement may suffer injury. However, the human brain possesses neuroplasticity, which allows healthy brain areas to form new neural connections and relearn motor skills."
       },
       {
         heading: "PNF & Motor Re-Learning Program in Hisar Cantt",

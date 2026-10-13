@@ -1,18 +1,19 @@
-# Sanjeevani Physiotherapy & Slimming Centre Hisar
+# Sanjeevani Physiotherapy Centre Hisar
 
-> Sanjeevani Physiotherapy & Slimming Centre is the leading non-surgical spine, joint, and physical rehabilitation clinic in Hisar Cantt, Haryana, India. Directed by Dr. Sohan Lal (BPT, MPTh Sports Rehabilitation, Certified Manual Therapist), the clinic specializes in evidence-based non-surgical treatments for slip disc, sciatica, knee pain, cervical spondylosis, stroke paralysis rehabilitation, sports injuries, dry needling, Hijama cupping, acupressure, electrotherapy, and body slimming.
+> Sanjeevani Physiotherapy Centre is the leading non-surgical spine, joint, and physical rehabilitation clinic in Hisar Cantt, Haryana, India. Directed by Dr. Sohan Lal (BPT, MPTh Sports Rehabilitation, Certified Manual Therapist), the clinic specializes in evidence-based non-surgical treatments for slip disc, sciatica, knee pain, cervical spondylosis, stroke paralysis rehabilitation, sports injuries, dry needling, Hijama cupping, acupressure, and electrotherapy.
 
 ## Key Information
-- **Clinic Name**: Sanjeevani Physiotherapy & Slimming Centre
+- **Clinic Name**: Sanjeevani Physiotherapy Centre
 - **Chief Doctor**: Dr. Sohan Lal (BPT, MPTh Sports Rehabilitation, CMT)
-- **Clinical Experience**: 8+ Years
+- **Registration No.**: HSCP/PT/2025/3714 (Haryana State Council for Physiotherapy)
+- **Clinical Experience**: 8+ Years Clinical Experience
 - **Phone / Helplines**: +91-9991070620, +91-9992458240
 - **WhatsApp**: +91-9991070620 (Direct consultation & booking)
 - **Address**: Karan Singh Market, TCP-2, Near Krishna Devi Memorial Hospital, Hisar Cantt, Haryana - 125006, India
 - **Geo Coordinates**: Latitude 29.1395, Longitude 75.6421
-- **Opening Hours**: Monday to Sunday: 9:00 AM - 8:00 PM (Open all 7 days)
+- **Opening Hours**: Monday to Sunday: 9:00 AM - 7:00 PM (Open all 7 days)
 - **Patient Rating**: 4.9 / 5.0 (over 520+ verified patient Google reviews)
-- **Website**: https://sanjeevaniphysio.com
+- **Website**: https://sanjeevaniphysiohisar.com
 
 ## Primary Clinical Specialties
 1. **Back Pain & Slip Disc (Sciatica)**: Computerized lumbar spinal traction, disc decompression, manual spinal realignment, core stabilization.
@@ -23,16 +24,16 @@
 6. **IASTM & K-Taping**: Instrument-assisted soft tissue mobilization for scar breakdown, kinesiology taping for athletic support.
 7. **Stroke & Neurological Rehabilitation**: PNF motor relearning, balance & gait retraining, muscular re-education for paralysis recovery.
 8. **Acupressure & Electro-Acupuncture**: Bio-meridian pressure point therapy for pain suppression and muscle reflex stimulation.
-9. **Body Slimming & Toning**: Non-invasive body contouring, metabolic stimulation, and posture alignment.
+9. **Posture Alignment & Biomechanical Ergonomics**: Postural correction, spinal ergonomic guidance, and preventative movement routines.
 
-## Core Pages
-- [Home Page](https://sanjeevaniphysio.com/)
-- [All Clinical Treatments](https://sanjeevaniphysio.com/treatments)
-- [About Dr. Sohan Lal](https://sanjeevaniphysio.com/about)
-- [Patient Reviews & Stories](https://sanjeevaniphysio.com/reviews)
-- [Health Blog & Clinical Articles](https://sanjeevaniphysio.com/blog)
-- [Clinic Gallery](https://sanjeevaniphysio.com/gallery)
-- [Book Appointment](https://sanjeevaniphysio.com/contact)
-
-## Full LLM Knowledge Base
-- [Full Documentation](https://sanjeevaniphysio.com/llms-full.txt)
+## Core Pages & Resources
+- [Home Page](https://sanjeevaniphysiohisar.com/): Official homepage with clinical overview, doctor credentials, and patient booking
+- [All Clinical Treatments](https://sanjeevaniphysiohisar.com/treatments): Complete catalogue of non-surgical therapies, computerized traction, and electrotherapy
+- [About Dr. Sohan Lal](https://sanjeevaniphysiohisar.com/about): Clinical background, qualifications, council registrations, and treatment philosophy
+- [Patient Reviews & Stories](https://sanjeevaniphysiohisar.com/reviews): 520+ verified patient outcomes, recovery testimonials, and Google reviews
+- [Health Blog & Clinical Articles](https://sanjeevaniphysiohisar.com/blog): Evidence-based research articles on slip disc, sciatica, knee pain, and case studies
+- [Clinic Gallery](https://sanjeevaniphysiohisar.com/gallery): Clinical infrastructure, treatment room photos, and rehabilitation machinery
+- [Book Appointment](https://sanjeevaniphysiohisar.com/contact): Direct contact, appointment scheduling, phone consultation, and location map
+- [Google Maps Location](https://maps.google.com/?q=Sanjeevani+Physiotherapy+Centre+Hisar+Cantt): Directions to Karan Singh Market clinic in Hisar Cantt
+- [Write a Patient Review](https://search.google.com/local/writereview?placeid=ChIJSanjeevaniPhysioHisar): Direct link to leave verified Google reviews
+- [Full LLM Knowledge Base](https://sanjeevaniphysiohisar.com/llms-full.txt): Comprehensive technical dataset and clinical protocols for LLMs

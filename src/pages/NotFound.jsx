@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
-import { Home, ArrowLeft, Phone, Calendar } from "lucide-react";
+import { Home, Calendar } from "lucide-react";
 import { clinic } from "../data/content";
 
 export default function NotFound() {
@@ -9,7 +9,7 @@ export default function NotFound() {
     <div className="min-h-screen pt-32 pb-20 bg-bg flex items-center justify-center px-4">
       <SEO
         title="404 - Page Not Found | Sanjeevani Physiotherapy Hisar"
-        description="The page you are looking for does not exist. Return to Sanjeevani Physiotherapy & Slimming Centre Hisar."
+        description="The page you are looking for does not exist. Return to Sanjeevani Physiotherapy Centre Hisar."
       />
 
       <div className="max-w-xl w-full bg-surface rounded-3xl p-8 sm:p-12 border-2 border-slate-200 shadow-2xl text-center space-y-6">
@@ -45,7 +45,7 @@ export default function NotFound() {
         </div>
 
         <div className="pt-6 border-t border-slate-100 text-xs text-muted">
-          <p className="font-bold text-textMain">Sanjeevani Physiotherapy & Slimming Centre (Hisar Cantt)</p>
+          <p className="font-bold text-textMain">Sanjeevani Physiotherapy Centre (Hisar Cantt)</p>
           <p className="mt-1">Helpline: <a href={`tel:${clinic.phones[0]}`} className="text-primary font-bold hover:underline">{clinic.phones[0]}</a> / <a href={`tel:${clinic.phones[1]}`} className="text-primary font-bold hover:underline">{clinic.phones[1]}</a></p>
         </div>
       </div>

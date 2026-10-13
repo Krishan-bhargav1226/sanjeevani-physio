@@ -1,9 +1,9 @@
-// Central structured data store for Sanjeevani Physiotherapy & Slimming Centre
+// Central structured data store for Sanjeevani Physiotherapy Centre
 
 export const clinic = {
   name: "Sanjeevani",
   nameHindi: "Sanjeevani Physiotherapy Centre",
-  tagline: "Physiotherapy & Slimming Centre",
+  tagline: "Physiotherapy & Rehabilitation Centre",
   taglineHindi: "Step Towards A Pain-Free Life",
   subTaglineHindi: "Right Treatment • Expert Care • Better Recovery",
   doctor: "Dr. Sohan Lal",
@@ -19,7 +19,9 @@ export const clinic = {
   addressShort: "Hisar Cantt, Haryana",
   mapQuery: "Sanjeevani Physiotherapy Centre Karan Singh Market Hisar Cantt",
   mapUrl: "https://maps.app.goo.gl/DwJk4W9QqFjLYVCe6",
-  workingHours: "Monday – Sunday: 9:00 AM – 8:00 PM (Sunday Also Open)",
+  workingHours: "Monday – Sunday: 9:00 AM – 7:00 PM (Sunday Also Open)",
+  registrationNo: "HSCP/PT/2025/3714",
+  regAuthority: "Haryana State Council for Physiotherapy",
 };
 
 export const stats = [
@@ -35,9 +37,11 @@ export const doctorBio = {
   qualifications: "BPT, MPTh (Sports Rehabilitation), Certified Manual Therapist (CMT)",
   experience: "8+ Years in Clinical Physiotherapy & Sports Medicine",
   specialization: "Spine & Joint Biomechanics, Sports Injury Rehab, Non-Surgical Sciatica Care",
+  registrationNo: "HSCP/PT/2025/3714 (Haryana State Council for Physiotherapy)",
   aboutText: "Dr. Sohan Lal is a leading physiotherapist in Hisar, recognized for evidence-based non-surgical recovery protocols. Having trained in advanced manual therapy and sports rehabilitation, Dr. Sohan Lal has successfully treated over 5,000 patients suffering from slip disc, sciatica, severe knee osteoarthritis, cervical spondylosis, and sports injuries.",
-  philosophy: "Our core mission at Sanjeevani is to eliminate the root cause of physical pain through precise joint alignment, advanced electrotherapy, and customized biomechanical rehab — empowering patients to avoid unnecessary surgery.",
+  philosophy: "Our clinical focus is identifying and treating joint and spinal mechanical strain directly through mobilization, electrotherapy, and active rehabilitation to help patients avoid surgery.",
   certifications: [
+    "Haryana State Council for Physiotherapy (Reg. No: HSCP/PT/2025/3714)",
     "Certified Manual Therapist (CMT - Spinal & Peripheral Mobilization)",
     "Master of Physiotherapy in Sports Rehab (MPTh)",
     "Kinesiology Taping & Myofascial Release Specialist",
@@ -302,16 +306,16 @@ export const services = [
   },
   {
     id: "stroke",
-    title: "Stroke, Neuro Rehab & Slimming",
-    titleHindi: "Neuro & Slimming",
-    englishTitle: "Paralysis Motor Re-learning & Body Toning",
-    badge: "Neuro & Slimming",
-    desc: "Dedicated neuro-rehabilitation using PNF techniques for paralysis recovery, alongside non-invasive body slimming and toning.",
+    title: "Stroke & Neuro Rehabilitation",
+    titleHindi: "Neuro Rehabilitation",
+    englishTitle: "Paralysis Motor Re-learning & Functional Recovery",
+    badge: "Neuro Rehab",
+    desc: "Dedicated neuro-rehabilitation using PNF techniques for paralysis recovery, motor re-learning, gait balance, and sensory reactivation.",
     features: [
       "PNF (Proprioceptive Neuromuscular Facilitation)",
       "Motor Re-learning & Coordination",
       "Gait & Balance Retraining",
-      "Non-Invasive Body Slimming & Toning"
+      "Neuromuscular Muscle Reactivation"
     ]
   },
 ];
@@ -484,6 +488,6 @@ export const faqs = [
   },
   {
     q: "What conditions are treated at Sanjeevani Centre?",
-    a: "We specialize in Slip Disc, Sciatica, Knee Osteoarthritis, Cervical Spondylosis, Frozen Shoulder, Stroke/Paralysis Rehab, Sports Injuries (ACL/Meniscus), and Non-Surgical Slimming."
+    a: "We specialize in Slip Disc, Sciatica, Knee Osteoarthritis, Cervical Spondylosis, Frozen Shoulder, Stroke/Paralysis Rehab, and Sports Injuries (ACL/Meniscus)."
   }
 ];

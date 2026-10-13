@@ -1,6 +1,6 @@
 import React from "react";
-import { clinic, services, specializedTherapies } from "../data/content";
-import { ArrowUpRight, CheckCircle2, Sparkles, Phone, ShieldCheck, HeartPulse, Activity, Zap, Dumbbell, Trophy, Brain } from "lucide-react";
+import { clinic, specializedTherapies } from "../data/content";
+import { ArrowUpRight, CheckCircle2, Sparkles, Phone, ShieldCheck, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -19,17 +19,6 @@ export default function SwissHero() {
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-  };
-
-  const getTherapyIcon = (id) => {
-    switch (id) {
-      case "manual": return <Activity className="w-4 h-4 text-emerald-400" />;
-      case "exercise": return <Dumbbell className="w-4 h-4 text-emerald-400" />;
-      case "electro": return <Zap className="w-4 h-4 text-amber-400" />;
-      case "sports": return <Trophy className="w-4 h-4 text-sky-400" />;
-      case "stroke": return <Brain className="w-4 h-4 text-indigo-400" />;
-      default: return <Activity className="w-4 h-4 text-emerald-400" />;
-    }
   };
 
   return (
@@ -73,7 +62,7 @@ export default function SwissHero() {
           {/* Main Display Headline */}
           <motion.div variants={itemVariants} className="space-y-2">
             <h1 className="heading-display text-textMain tracking-tight">
-              Sanjeevani Physiotherapy & Slimming Centre <br />
+              Sanjeevani Physiotherapy Centre <br />
               <span className="text-shimmer text-2xl sm:text-4xl md:text-5xl block mt-1 font-extrabold">
                 Non-Surgical Spine & Joint Care Specialist
               </span>
@@ -124,18 +113,22 @@ export default function SwissHero() {
               </div>
 
               {/* Trust Indicators */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 pt-3">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-3">
                 <motion.div whileHover={{ y: -2 }} className="flex items-center space-x-2 text-xs font-extrabold text-textMain bg-surface p-3 rounded-2xl border border-slate-200 shadow-sm">
                   <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0" />
-                  <span>8+ Years Experience</span>
+                  <span>8+ Years Exp</span>
                 </motion.div>
                 <motion.div whileHover={{ y: -2 }} className="flex items-center space-x-2 text-xs font-extrabold text-textMain bg-surface p-3 rounded-2xl border border-slate-200 shadow-sm">
                   <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span>5000+ Happy Patients</span>
+                  <span>5000+ Recovered</span>
                 </motion.div>
-                <motion.div whileHover={{ y: -2 }} className="flex items-center space-x-2 text-xs font-extrabold text-textMain bg-surface p-3 rounded-2xl border border-slate-200 shadow-sm col-span-2 sm:col-span-1">
+                <motion.div whileHover={{ y: -2 }} className="flex items-center space-x-2 text-xs font-extrabold text-textMain bg-surface p-3 rounded-2xl border border-slate-200 shadow-sm">
                   <CheckCircle2 className="w-4 h-4 text-secondary flex-shrink-0" />
-                  <span>100% Non-Surgical</span>
+                  <span>Non-Surgical</span>
+                </motion.div>
+                <motion.div whileHover={{ y: -2 }} className="flex items-center space-x-1.5 text-xs font-black text-red-700 bg-red-50 p-3 rounded-2xl border border-red-200 shadow-sm col-span-2 sm:col-span-1">
+                  <ShieldCheck className="w-4 h-4 text-red-600 flex-shrink-0" />
+                  <span className="truncate">Reg. HSCP/PT/2025/3714</span>
                 </motion.div>
               </div>
 
@@ -161,11 +154,15 @@ export default function SwissHero() {
                     <h4 className="font-black text-textMain text-base font-display">{clinic.doctor}</h4>
                     <p className="text-xs text-primary font-bold">{clinic.doctorCreds}</p>
                     <p className="text-xs text-secondary font-extrabold">{clinic.doctorRole}</p>
+                    <div className="mt-1.5 inline-flex items-center space-x-1.5 bg-red-50 text-red-700 px-2.5 py-0.5 rounded-full text-[10px] font-black border border-red-200 shadow-sm">
+                      <ShieldCheck className="w-3 h-3 text-red-600" />
+                      <span>Reg No. HSCP/PT/2025/3714</span>
+                    </div>
                   </div>
                 </div>
 
                 <div className="bg-bg p-3.5 rounded-2xl border border-slate-200 text-xs text-textMain font-semibold leading-relaxed">
-                  "Our mission is to eliminate root-cause pain and restore natural mobility without invasive surgery."
+                  "We focus on joint alignment and non-surgical therapy to restore comfortable movement."
                 </div>
               </motion.div>
             </motion.div>
@@ -224,7 +221,7 @@ export default function SwissHero() {
             width="1200"
             height="480"
             loading="eager"
-            fetchpriority="high"
+            fetchPriority="high"
             decoding="async"
             className="w-full h-[320px] sm:h-[450px] object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
           />
@@ -235,8 +232,13 @@ export default function SwissHero() {
             <div className="glass-pill p-3.5 sm:px-6 sm:py-4 rounded-2xl border border-white/20 max-w-xl flex items-center space-x-3 sm:space-x-4 shadow-xl w-full sm:w-auto">
               <img src="/images/logo.png" alt="Sanjeevani Emblem" width="48" height="48" className="w-10 h-10 sm:w-12 sm:h-12 object-contain rounded-full bg-white p-1 flex-shrink-0 shadow-lg" />
               <div>
-                <h4 className="font-extrabold text-xs sm:text-base text-white font-display">Sanjeevani Physiotherapy & Slimming Centre</h4>
-                <p className="text-[11px] sm:text-xs text-slate-200 mt-0.5 font-medium">{clinic.address}</p>
+                <h4 className="font-extrabold text-xs sm:text-base text-white font-display">Sanjeevani Physiotherapy Centre</h4>
+                <div className="flex flex-wrap items-center gap-1.5 mt-0.5">
+                  <span className="bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded-full shadow-sm">
+                    Reg. No. HSCP/PT/2025/3714
+                  </span>
+                  <p className="text-[11px] sm:text-xs text-slate-200 font-medium">{clinic.address}</p>
+                </div>
               </div>
             </div>
             

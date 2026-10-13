@@ -11,6 +11,7 @@ export default function Treatments() {
       <SEO 
         title="Clinical Specialties & Non-Surgical Therapies" 
         description="Explore advanced joint mobilization, computerized traction, cold laser therapy, and stroke rehab at Sanjeevani Physiotherapy Hisar." 
+        pageType="MedicalWebPage"
       />
 
       {/* Page Header */}

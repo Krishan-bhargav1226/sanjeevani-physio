@@ -8,13 +8,20 @@ export default function FloatingActions() {
   const [scrollPercent, setScrollPercent] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const current = window.scrollY;
-      setShowTop(current > 250);
-      setScrollPercent(totalHeight > 0 ? (current / totalHeight) * 100 : 0);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const current = window.scrollY;
+          setShowTop(current > 250);
+          setScrollPercent(totalHeight > 0 ? (current / totalHeight) * 100 : 0);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

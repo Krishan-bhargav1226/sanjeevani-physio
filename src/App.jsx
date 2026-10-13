@@ -3,15 +3,19 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 import { HelmetProvider } from "react-helmet-async";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import Home from "./pages/Home";
-import Treatments from "./pages/Treatments";
-import About from "./pages/About";
-import Reviews from "./pages/Reviews";
-import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
-import Gallery from "./pages/Gallery";
-import NotFound from "./pages/NotFound";
+
+// Route-level dynamic code splitting for optimal Vercel initial bundle
+const Treatments = React.lazy(() => import("./pages/Treatments"));
+const About = React.lazy(() => import("./pages/About"));
+const Reviews = React.lazy(() => import("./pages/Reviews"));
+const Contact = React.lazy(() => import("./pages/Contact"));
+const Blog = React.lazy(() => import("./pages/Blog"));
+const Gallery = React.lazy(() => import("./pages/Gallery"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
 
 export default function App() {
   return (
@@ -31,6 +35,8 @@ export default function App() {
           </Route>
         </Routes>
       </Router>
+      <Analytics />
+      <SpeedInsights />
     </HelmetProvider>
   );
 }

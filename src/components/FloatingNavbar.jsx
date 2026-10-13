@@ -8,10 +8,14 @@ export default function FloatingNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Close mobile drawer on route change
-  useEffect(() => {
-    setMobileMenuOpen(false);
-  }, [location]);
+  // Close mobile drawer on route change during render without cascading effect render
+  const [prevPath, setPrevPath] = useState(location.pathname);
+  if (prevPath !== location.pathname) {
+    setPrevPath(location.pathname);
+    if (mobileMenuOpen) {
+      setMobileMenuOpen(false);
+    }
+  }
 
   // Close mobile drawer on Escape key
   useEffect(() => {
@@ -39,7 +43,7 @@ export default function FloatingNavbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -80,7 +84,7 @@ export default function FloatingNavbar() {
                   </span>
                 </div>
                 <span className="text-[8px] xs:text-[9px] sm:text-[10px] md:text-xs text-emerald-400 font-extrabold tracking-wider -mt-0.5 truncate hidden xs:block">
-                  Physiotherapy & Slimming Centre
+                  Physiotherapy & Rehab Centre
                 </span>
               </div>
             </Link>
@@ -152,7 +156,7 @@ export default function FloatingNavbar() {
             <div className="flex flex-col space-y-1 pb-4 border-b border-white/10">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-black text-emerald-400 tracking-wider">Sanjeevani Physiotherapy Centre</span>
-                <span className="text-[11px] text-emerald-400 font-bold bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-500/30">🟢 9 AM - 8 PM</span>
+                <span className="text-[11px] text-emerald-400 font-bold bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-500/30">🟢 9 AM - 7 PM</span>
               </div>
               <span className="text-xs text-slate-300 font-semibold">{clinic.tagline}</span>
             </div>

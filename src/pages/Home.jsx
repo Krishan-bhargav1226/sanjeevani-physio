@@ -18,11 +18,11 @@ export default function Home() {
     <div className="animate-fadeIn flex flex-col">
       <SEO 
         title="Non-Surgical Spine & Joint Recovery Clinic" 
-        description="Sanjeevani Physiotherapy & Slimming Centre Hisar under Dr. Sohan Lal (BPT, MPTh Sports, CMT) - Expert care for Slip Disc, Sciatica, Knee Pain & Stroke Rehab." 
+        description="Sanjeevani Physiotherapy Centre Hisar under Dr. Sohan Lal (BPT, MPTh Sports, CMT) - Expert care for Slip Disc, Sciatica, Knee Pain & Stroke Rehab." 
       />
 
       {/* 1. Hero Banner */}
-      <div className="order-1">
+      <div className="order-1 md:order-1">
         <SwissHero />
       </div>
 
@@ -31,8 +31,8 @@ export default function Home() {
         <StatsSection />
       </div>
 
-      {/* 3. Interactive Appointment Booking Section (2nd/3rd Position on Mobile) */}
-      <div className="order-3 md:order-8">
+      {/* 3. Interactive Appointment Booking Section (Mobile High Priority, Desktop Flow) */}
+      <div className="order-3 md:order-9">
         <BookingSection />
       </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SEO from "../components/SEO";
 import { blogPosts } from "../data/blogData";
 import { motion } from "framer-motion";
@@ -9,12 +9,29 @@ import { clinic } from "../data/content";
 export default function Blog() {
   const [selectedPost, setSelectedPost] = useState(null);
 
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setSelectedPost(null);
+    };
+    if (selectedPost) {
+      window.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedPost]);
+
   return (
     <div className="pt-28 md:pt-36 pb-24 min-h-screen bg-bg relative">
       <SEO 
         title="Physiotherapy Articles & Clinical Case Studies Hisar" 
         description="Read scientific clinical case studies on non-surgical slip disc treatment, sciatica recovery, knee osteoarthritis care, and stroke rehab in Hisar Cantt under Dr. Sohan Lal." 
         keywords="Physiotherapy Articles Hisar, Slip Disc Case Study Hisar, Sciatica Recovery Guide Hisar, Knee Osteoarthritis Care Hisar, Dr Sohan Lal Blog"
+        pageType="CollectionPage"
       />
       
       {/* Background Element */}
@@ -95,9 +112,18 @@ export default function Blog() {
 
       {/* Article Detail Full Modal */}
       {selectedPost && (
-        <div className="fixed inset-0 z-50 bg-darkSection/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="blog-modal-title"
+          className="fixed inset-0 z-50 bg-darkSection/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setSelectedPost(null);
+          }}
+        >
           <div className="bg-surface rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-10 space-y-8 shadow-2xl relative border-2 border-slate-200 text-textMain">
             <button
+              type="button"
               onClick={() => setSelectedPost(null)}
               className="absolute top-5 right-5 p-2 rounded-full bg-slate-100 text-textMain hover:bg-slate-200 transition-colors"
               aria-label="Close article"
@@ -119,9 +145,9 @@ export default function Blog() {
                 </span>
               </div>
 
-              <h1 className="text-2xl sm:text-3xl font-extrabold font-display text-textMain leading-tight">
+              <h2 id="blog-modal-title" className="text-2xl sm:text-3xl font-extrabold font-display text-textMain leading-tight">
                 {selectedPost.title}
-              </h1>
+              </h2>
 
               <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-muted bg-bg p-3 rounded-2xl border border-slate-200">
                 <div className="flex items-center text-textMain font-bold">

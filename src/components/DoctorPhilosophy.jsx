@@ -29,6 +29,10 @@ export default function DoctorPhilosophy() {
                     <h4 className="font-black text-white text-base font-display">{clinic.doctor} ({clinic.doctorRole})</h4>
                     <p className="text-xs text-emerald-400 font-extrabold">{clinic.doctorCreds}</p>
                     <p className="text-[11px] text-slate-300 font-medium">Chief Physiotherapist & Sports Rehab Specialist</p>
+                    <div className="mt-1.5 inline-flex items-center space-x-1.5 bg-red-600 text-white px-2.5 py-0.5 rounded-full text-[10px] font-black tracking-wide border border-red-400 shadow-sm">
+                      <ShieldCheck className="w-3 h-3 text-white" />
+                      <span>Registration No. HSCP/PT/2025/3714</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -46,8 +50,24 @@ export default function DoctorPhilosophy() {
             </div>
 
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-light">
-              With over 8+ years of dedicated clinical practice, Dr. Sohan Lal leads Sanjeevani Physiotherapy Centre with a commitment to evidence-based non-surgical recovery. We focus on diagnosing the root biomechanical cause rather than just masking symptoms.
+              With over 8 years of clinical practice, Dr. Sohan Lal evaluates spine and joint mechanics directly to correct structural causes of pain and restore daily movement.
             </p>
+
+            {/* Official Registration Banner */}
+            <div className="bg-red-950/60 border border-red-500/40 p-4 rounded-2xl flex items-center space-x-3.5 shadow-lg">
+              <div className="w-10 h-10 rounded-xl bg-red-600 text-white flex items-center justify-center flex-shrink-0 shadow-md">
+                <ShieldCheck className="w-5 h-5 text-white" />
+              </div>
+              <div className="min-w-0">
+                <div className="flex items-center space-x-2">
+                  <span className="text-xs font-black text-white uppercase tracking-wider">Haryana State Council for Physiotherapy</span>
+                  <span className="bg-red-600 text-white text-[9px] font-black px-2 py-0.5 rounded-full">OFFICIAL</span>
+                </div>
+                <p className="text-xs sm:text-sm font-extrabold text-red-200 mt-0.5 font-mono">
+                  Registration No. HSCP/PT/2025/3714
+                </p>
+              </div>
+            </div>
 
             {/* Qualifications Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
